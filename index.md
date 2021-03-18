@@ -4,7 +4,7 @@ title: Inicio
 nav_order: 1
 ---
 
-# Introduccióna Docker
+# Introducción a Docker
 
 Curso "Introducción a Docker" desarrollado para el CPR de Zafra (Abril 2021).
 
