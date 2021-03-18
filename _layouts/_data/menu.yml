@@ -1,0 +1,14 @@
+- nombre: Unidades
+  items:
+   - name: Inicio
+     url: /cloud3
+   - name: Sesión 1
+     url: /cloud3/curso/u1
+   - name: Sesión 2
+     url: /cloud3/curso/u2
+   - name: Sesión 3
+     url: /cloud3/curso/u4
+   - name: Sesión 4
+     url: /cloud3/curso/u5
+   - name: Sesión 5
+     url: /cloud3/curso/u6

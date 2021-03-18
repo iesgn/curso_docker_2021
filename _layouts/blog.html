@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>{{page.tittle}}</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Welcome to GitHub Pages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Curso “Introduccióna docker para el CEP de Zafra - Abril 2021" />
+<meta property="og:description" content="Curso “Introduccióna docker para el CEP de Zafra - Abril 2021" />
+<link rel="canonical" href="https://iesgn.github.io/curso_docker_2021/" />
+<meta property="og:url" content="https://iesgn.github.io/curso_docker_2021/" />
+<meta property="og:site_name" content="curso_docker_2021" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Welcome to GitHub Pages" />
+<script type="application/ld+json">
+{"description":"Curso “Introduccióna docker para el CEP de Zafra - Abril 2021","@type":"WebSite","headline":"Welcome to GitHub Pages","url":"https://iesgn.github.io/curso_docker_2021/","name":"curso_docker_2021","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/curso_docker_2021/assets/css/style.css?v=37f11def5b37a714324ace8b08de98337eb47e11">
+    <script src="/curso_docker_2021/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Docker</h1>
+        <p class="header">Docker</p>
+
+        {% for m in site.data.menu %}
+	        {% if page.menu contains {{m.nombre}} %}
+            <h3 class="header">{{m.nombre}}</h3>
+            <ul class="otherlinks clearfix">
+	          {% for me in m.items %}
+              <li><a title="" href="{{me.url}}" rel="external">{{me.name}}</a></li>
+	          {% endfor %}
+            </ul>
+            {% endif %}
+	      {% endfor %}
+        
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/iesgn">iesgn</a></p>
+       
+      </header>
+
+      <section>
+        <h1>{{page.tittle}}</h1> 
+        {{content}}    
+
+      </section>
+
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
+
