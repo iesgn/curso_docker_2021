@@ -23,7 +23,7 @@ Curso "Introducción a Docker" desarrollado para el CPR de Zafra (Abril 2021).
 
 ## Contenidos
 
-* Sesión 1: Introducción a docker (**15 de abril**)
+* Sesión 1: Introducción a los contenedores y a Docker (**15 de abril**)
 * Sesión 2: Trabajando con imágenes docker ((**22 de abril**))
 * Sesión 3: Almacenamiento en docker (**29 de abril**)
 * Sesión 4: Redes en docker (**6 de mayo**)
