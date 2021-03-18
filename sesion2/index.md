@@ -115,7 +115,7 @@ Por último al solicitar información de la imágen, podemos ver información so
             ]
     ...
 
-## Creación de instancias desde imágenes
+## Creación de contenedores desde imágenes
 
 Si navegas un poco por las distintas imágenes que encuentras en el registro de Docker Hub, te darás cuenta, que existen dos tipos de imágenes según la utilidad que nos ofrecen.
 
