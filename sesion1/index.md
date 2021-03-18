@@ -18,7 +18,9 @@ Docker está formado por varios componentes:
 
 En debian vamos a instalar la versión de la comunidad:
 
-    # apt install docker.io
+```bash
+# apt install docker.io
+```
 
 Si queremos usar el cliente de docker con un usuario sin privilegios:
 
