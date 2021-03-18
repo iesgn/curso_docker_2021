@@ -31,14 +31,16 @@ Docker está formado por varios componentes:
 En debian vamos a instalar la versión de la comunidad:
 
 ```bash
-# apt install docker.io
+apt install docker.io
 ```
 
 Si queremos usar el cliente de docker con un usuario sin privilegios:
 
-    usermod -aG docker usuario
+```bash
+usermod -aG docker usuario
+```
 
-volvemos acceder con el usuario al sistema, y comprobamos que ya podemos usar el cliente docker con el usuario sin privilegios, por ejemplo, podemos comprobar la versión que hemos instalado:
+Volvemos acceder con el usuario al sistema, y comprobamos que ya podemos usar el cliente docker con el usuario sin privilegios, por ejemplo, podemos comprobar la versión que hemos instalado:
 
     $ docker --version
     Docker version 18.09.1, build 4c52b90
@@ -163,6 +165,7 @@ Para mostrar información de un contenedor ejecutamos `docker inspect`:
                 "Running": false,
                 "Paused": false,
                 ...
+
 Nos muestra mucha información, está en formato JSON (JavaScript Object Notation) y nos da datos sobre aspectos como:
 
 * El id del contenedor.
