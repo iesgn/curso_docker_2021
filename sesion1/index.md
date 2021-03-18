@@ -254,6 +254,7 @@ Y para acceder podemos ejecutar:
 
 
 ## Ejercicios
+{: .fs-9 }
 
 1. Instala docker en una máquina y configuralo para que se pueda usar con un usuario sin privilegios.
 2. Crea un contenedor interactivo desde una imagen debian. Instala un paquete (por ejemplo `nano`). Sal de la terminal, ¿sigue el contenedor corriendo? ¿Por qué?. Vuelve a iniciar el contenedor y accede de nuevo a él de forma interactiva. ¿Sigue instalado el `nano`?. Sal del contenedor, y borralo. Crea un nuevo contenedor interactivo desde la misma imagen. ¿Tiene el `nano` instalado?
