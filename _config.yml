@@ -36,5 +36,6 @@ aux_links:
 
 # Back to top link
 back_to_top: true
-back_to_top_text: "Inicio"
+back_to_top_text: Inicio
 
+footer_content: "Esta documentación tiene licencia <a href=\"https://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License v2.0</a>"
