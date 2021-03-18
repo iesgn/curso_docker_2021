@@ -1,14 +1,16 @@
 - nombre: Unidades
   items:
    - name: Inicio
-     url: /cloud3
+     url: /curso_docker_2021
    - name: Sesión 1
-     url: /cloud3/curso/u1
+     url: #
    - name: Sesión 2
-     url: /cloud3/curso/u2
+     url: #
    - name: Sesión 3
-     url: /cloud3/curso/u4
+     url: #
    - name: Sesión 4
-     url: /cloud3/curso/u5
+     url: #
    - name: Sesión 5
-     url: /cloud3/curso/u6
+     url: #
+   - name: Sesión 5
+     url: #
