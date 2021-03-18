@@ -31,11 +31,9 @@
     <div class="wrapper">
       <header>
         <h1 class="header">Docker</h1>
-        <p class="header">Docker</p>
-
         {% for m in site.data.menu %}
 	        {% if page.menu contains {{m.nombre}} %}
-            <h3 class="header">{{m.nombre}}</h3>
+            <p class="header">{{m.nombre}}</p>
             <ul class="otherlinks clearfix">
 	          {% for me in m.items %}
               <li><a title="" href="{{me.url}}" rel="external">{{me.name}}</a></li>
