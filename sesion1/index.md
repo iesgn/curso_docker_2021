@@ -1,6 +1,10 @@
 ---
-tittle: Introducción a los contenedores y a Docker
+layout: default
+title: Introducción
+nav_order: 2
 ---
+
+# Introducción a los contenedores y a Docker
 
 * [Presentación](https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/introduccion_docker.pdf)
 
