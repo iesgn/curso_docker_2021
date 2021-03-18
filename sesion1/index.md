@@ -1,8 +1,5 @@
 ---
-layout: blog
 tittle: Introducción a los contenedores y a Docker
-menu:
-  - Unidades
 ---
 
 * [Presentación](https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/introduccion_docker.pdf)
