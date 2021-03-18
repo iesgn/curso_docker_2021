@@ -5,6 +5,14 @@ nav_order: 2
 ---
 
 # Introducción a los contenedores y a Docker
+{: .no_toc }
+
+## Contenido
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
 
 * [Presentación](https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/introduccion_docker.pdf)
 
