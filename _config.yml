@@ -1,6 +1,5 @@
 
 remote_theme: pmarsceill/just-the-docs 
 search_enabled: false
-aux_links:
-  "Docker":
-    - "https://iesgn.github.io/curso_docker_2021"
+title: Docker
+description: Curso "Introducción a  docker" para el CEP de Zafra - Abril 2021
