@@ -1,3 +1,6 @@
 
 remote_theme: pmarsceill/just-the-docs 
 search_enabled: false
+aux_links:
+  "Docker":
+    - "https://iesgn.github.io/curso_docker_2021"
