@@ -1,8 +1,5 @@
 ---
-layout: blog
 tittle: Introducción a Docker
-menu:
-  - Unidades
 ---
 
 Curso "Introducción a Docker" desarrollado para el CPR de Zafra (Abril 2021).
