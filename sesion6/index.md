@@ -3,6 +3,7 @@ layout: default
 title: Creación de imágenes
 nav_order: 7
 has_children: true
+has_toc: false
 ---
 # Creación de imágenes en docker
 
@@ -15,9 +16,14 @@ Para crea un contenedor que sirva nuestra aplicación, tendremos que crear una i
 
 ![docker](img/build.png)
 
-## Contenido
-{: .no_toc .text-delta }
+* [Creación de una nueva imagen a partir de un contenedor](creacion_imagenes_contenedor.html)
+* [Creación de imágenes con fichero Dockerfile](creacion_imagenes_dockerfile.html)
+* [Creación automática de imágenes en Docker Hub](creacion_imagenes_dockerhub.html)
 
-1. TOC
-{:toc}
+Veamos algunos ejemplos de ficheros `Dockerfile`:
 
+* [Ejemplos de ficheros Dockerfile](ejemplos_dockerfile.html)
+
+Una vez que hemos visto cómo crear imágenes docker, podemos estudiar el proceso de puesta en producción de aplicaciones web usando docker:
+
+* [Ciclo de vida de nuestras aplicaciones con docker](ciclo_vida.html)
