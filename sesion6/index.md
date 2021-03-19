@@ -16,9 +16,9 @@ Para crea un contenedor que sirva nuestra aplicación, tendremos que crear una i
 
 ![docker](img/build.png)
 
-* [Creación de una nueva imagen a partir de un contenedor](creacion_imagenes_contenedor.html)
-* [Creación de imágenes con fichero Dockerfile](creacion_imagenes_dockerfile.html)
-* [Creación automática de imágenes en Docker Hub](creacion_imagenes_dockerhub.html)
+* [Creación de una nueva imagen a partir de un contenedor](contenedor.html)
+* [Creación de imágenes con fichero Dockerfile](dockerfile.html)
+* [Creación automática de imágenes en Docker Hub](dockerhub.html)
 
 Veamos algunos ejemplos de ficheros `Dockerfile`:
 
