@@ -31,11 +31,15 @@ En este curso nos vamos a ocupar  únicamente de las dos primeras ya que la terc
 
 1. Arranca un contenedor a a partir de una imagen base
 
+        ```bash
         $ docker  run -it --name contenedor debian bash
+        ```
 
 2. Realizar modificaciones en el contenedor (instalaciones, modificación de archivos,...)
 
-        root@2df2bf1488c5:/# apt update && apt install apache2 -y
+```bash
+root@2df2bf1488c5:/# apt update && apt install apache2 -y
+```
 
 3. Crear una nueva imagen partiendo de ese contenedor usando `docker commit`. Con esta instrucción se creará una nueva imagen con las capas de la imagen base más la capa propia del contenedor. Al creala no voy a poner etiqueta, por lo que será `latest`.
 
