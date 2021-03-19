@@ -116,112 +116,137 @@ $ docker rm elastic_johnson
 
 Otro ejemplo:
 
-    $ docker run ubuntu /bin/echo 'Hello world' 
-    Unable to find image 'ubuntu:latest' locally
-    latest: Pulling from library/ubuntu
-    8387d9ff0016: Pull complete 
-    ...
-    Status: Downloaded newer image for ubuntu:latest
-    Hello world
+```bash
+$ docker run ubuntu /bin/echo 'Hello world' 
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+8387d9ff0016: Pull complete 
+...
+Status: Downloaded newer image for ubuntu:latest
+Hello world
+```
 
 Con el comando `run` vamos a crear un contenedor donde vamos a ejecutar un comando, en este caso vamos a crear el contenedor a partir de una imagen ubuntu. Como todavía no hemos descargado ninguna imagen del registro docker hub, es necesario que se descargue la  imagen. Si la tenemos ya en nuestro ordenador no será necesario la descarga. 
 
 Comprobamos que el contenedor ha ejecutado el comando que hemos indicado y se parado:
 
-    $ docker ps -a
-    CONTAINER ID        IMAGE               COMMAND                  CREATED                STATUS                      PORTS               NAMES
-    3bbf39d0ec26        ubuntu              "/bin/echo 'Hello wo…"   31 seconds ago      Exited     (0) 29 seconds ago                       wizardly_edison
+```bash
+$ docker ps -a
+CONTAINER ID        IMAGE              COMMAND                  CREATED               STATUS                      PORTS               NAMES
+3bbf39d0ec26        ubuntu              "/bin/echo 'Hello wo…"   31 seconds ago      Exited     (0) 29 seconds ago                       wizardly_edison
+```
 
 Con el comando `docker images` podemos visualizar las imágenes que ya tenemos descargadas en nuestro registro local:
 
-    $ docker images
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    ubuntu              latest              f63181f19b2f        7 days ago          72.9MB
-    hello-world         latest              bf756fb1ae65        13 months ago       13.3kB
-
+```bash
+$ docker images
+REPOSITORY          TAG                 IMAGE ID           CREATED             SIZE
+ubuntu              latest              f63181f19b2f        7 days ago          72.9MB
+hello-world         latest              bf756fb1ae65        13 months ago       13.3kB
+```
 
 ## Ejecutando un contenedor interactivo
 
 En este caso usamos la opción `-i` para abrir una sesión interactiva, `-t` nos permite crear un pseudo-terminal que nos va a permitir interaccionar con el contenedor, indicamos un nombre del contenedor con la opción `--name`, y la imagen que vamos a utilizar para crearlo, en este caso `ubuntu`,  y por último el comando que vamos a ejecutar, en este caso `/bin/bash`, que lanzará una sesión bash en el contenedor:
 
-    $  docker run -it --name contenedor1 ubuntu /bin/bash 
-    root@2bfa404bace0:/#
+```bash
+$  docker run -it --name contenedor1 ubuntu /bin/bash 
+root@2bfa404bace0:/#
+```
 
 El contenedor se para cuando salimos de él. Para volver a conectarnos a él:
 
-    $ docker start contendor1
-    contendor1
-    $ docker attach contendor1
-    root@2bfa404bace0:/#
+```bash
+$ docker start contendor1
+contendor1
+$ docker attach contendor1
+root@2bfa404bace0:/#
+```
 
 Si el contenedor se está ejecutando podemos ejecutar comando en él con el subcomando `exec`:
 
-    $ docker start contendor1
-    contendor1
-    $ docker exec contenedor1 ls -al
+```bash
+$ docker start contendor1
+contendor1
+$ docker exec contenedor1 ls -al
+```
 
 Con la orden `docker restart` reiniciamos el contendor, lo paramos y lo iniciamos.
 
 Para mostrar información de un contenedor ejecutamos `docker inspect`:
 
-    $ docker inspect contenedor1 
-    [
-        {
-            "Id": "178871769ac2fcbc1c73ce378066af01436b52a15894685b7321088468a25db7",
-            "Created": "2021-01-28T19:12:21.764255155Z",
-            "Path": "/bin/bash",
-            "Args": [],
-            "State": {
-                "Status": "exited",
-                "Running": false,
-                "Paused": false,
-                ...
+```bash
+$ docker inspect contenedor1 
+[
+    {
+        "Id": "178871769ac2fcbc1c73ce378066af01436b52a15894685b7321088468a25db7",
+        "Created": "2021-01-28T19:12:21.764255155Z",
+        "Path": "/bin/bash",
+        "Args": [],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            ...
+```
 
 Nos muestra mucha información, está en formato JSON (JavaScript Object Notation) y nos da datos sobre aspectos como:
 
 * El id del contenedor.
 * Los puertos abiertos y sus redirecciones
-* Los bind mounts y volúmenes usados.
+* Los *bind mounts* y volúmenes usados.
 * El tamaño del contenedor
 * La configuración de red del contenedor.
-* El ENTRYPOINT que es lo que se ejecuta al hacer docker run.
+* El *ENTRYPOINT* que es lo que se ejecuta al hacer docker run.
 * El valor de las variables de entorno.
 * Y muchas más cosas....
 
 En realidad, todas las imágenes tienen definidas un proceso que se ejecuta, en concreto la imagen `ubuntu` tiene definida por defecto el proceso `bash`, por lo que podríamos haber ejecutado:
 
-    $  docker run -it --name contenedor1 ubuntu
+```bash
+$ docker run -it --name contenedor1 ubuntu
+```
 
 ## Creando un contenedor demonio
 
 En esta ocasión hemos utilizado la opción `-d` del comando `run`, para que la ejecución del comando en el contenedor se haga en segundo plano.
 
-    $ docker run -d --name contenedor2 ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"
-    7b6c3b1c0d650445b35a1107ac54610b65a03eda7e4b730ae33bf240982bba08
+```bash
+$ docker run -d --name contenedor2 ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"
+7b6c3b1c0d650445b35a1107ac54610b65a03eda7e4b730ae33bf240982bba08
+```
 
 * Comprueba que el contenedor se está ejecutando
 * Comprueba lo que está haciendo el contenedor (`docker logs contenedor2`)
 
 Por último podemos parar el contenedor y borrarlo con las siguientes instrucciones:
 
-    $ docker stop contenedor2
-    $ docker rm contenedor2
+```bash
+$ docker stop contenedor2
+$ docker rm contenedor2
+```
 
 Hay que tener en cuenta que un contenedor que esta ejecutándose no puede ser eliminado. Tendríamos que para el contenedor y posteriormente borrarlo. Otra opción es borrarlo a la fuerza:
 
-    $ docker rm -f contenedor2
+```bash
+$ docker rm -f contenedor2
+```
 
 ## Creando un contenedor con un servidor web
 
 Tenemos muchas imágenes en el registro público **docker hub**, por ejemplo podemos crear un servidor web con apache 2.4:
 
-    $ docker run -d --name my-apache-app -p 8080:80 httpd:2.4
+```bash
+$ docker run -d --name my-apache-app -p 8080:80 httpd:2.4
+```
 
 Vemos que el contenedor se está ejecutando, además con la opción `-p` mapeamos un puerto del equipo donde tenemos instalado el docker, con un puerto del contenedor.  Para probarlo accede desde un navegador a la ip del servidor con docker y al puerto 8080.
 
 Para acceder al log del contenedor podemos ejecutar:
 
-    $ docker logs my-apache-app
+```bash
+$ docker logs my-apache-app
+```
 
 Con la opción `logs -f` seguimos visualizando los logs en tiempo real.
 
@@ -231,38 +256,45 @@ Más adelante veremos que al crear un contenedor que necesita alguna configuraci
 
 Para crear una variable de entorno al crear un contenedor usamos el flag `-e` o `--env`:
 
-    $ docker run -it --name prueba -e USUARIO=prueba ubuntu bash
-    root@91e81200c633:/# echo $USUARIO
-    prueba
+```bash
+$ docker run -it --name prueba -e USUARIO=prueba ubuntu bash
+root@91e81200c633:/# echo $USUARIO
+prueba
+```
 
 En ocasiones es obligatorio el inicializar alguna variable de entorno para que el contenedor pueda ser ejecutado. si miramos la [documentación](https://hub.docker.com/_/mariadb) en Docker Hub de la imagen mariadb, observamos que podemos definir algunas variables de entorno para la creación del contenedor (por ejemplo: `MYSQL_DATABASE`,`MYSQL_USER`, `MYSQL_PASSWORD`,...). Pero hay una que la tenemos que indicar de forma obligatoria, la contraseña del usuario `root` (`MYSQL_ROOT_PASSWORD`), por lo tanto:
 
-    $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb
-    $ docker ps
-    CONTAINER ID        IMAGE               COMMAND                  CREATED                STATUS              PORTS               NAMES
-    9c3effd891e3        mariadb             "docker-entrypoint.s…"   8 seconds ago       Up 7   seconds        3306/tcp            some-mariadb
+```bash
+$ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED                STATUS              PORTS               NAMES
+9c3effd891e3        mariadb             "docker-entrypoint.s…"   8 seconds ago       Up 7   seconds        3306/tcp            some-mariadb
+```
 
 Podemos ver que se ha creado una variable de entorno:
 
-    $ docker exec -it some-mariadb env
-    ...
-    MYSQL_ROOT_PASSWORD=my-secret-pw
-    ...
+```bash
+$ docker exec -it some-mariadb env
+...
+MYSQL_ROOT_PASSWORD=my-secret-pw
+...
+```
 
 Y para acceder podemos ejecutar:
 
-    $ docker exec -it some-mariadb bash                                  
-    root@9c3effd891e3:/# mysql -u root -p"$MYSQL_ROOT_PASSWORD" 
-    Welcome to the MariaDB monitor.  Commands end with ; or \g.
-    Your MariaDB connection id is 21
-    Server version: 10.5.8-MariaDB-1:10.5.8+maria~focal mariadb.org binary distribution
+```bash
+$ docker exec -it some-mariadb bash                                  
+root@9c3effd891e3:/# mysql -u root -p"$MYSQL_ROOT_PASSWORD" 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 21
+Server version: 10.5.8-MariaDB-1:10.5.8+maria~focal mariadb.org binary distribution
 
-    Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
-    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-    MariaDB [(none)]> 
-
+MariaDB [(none)]> 
+```
 
 ## Ejercicios
 {: .fs-9 }

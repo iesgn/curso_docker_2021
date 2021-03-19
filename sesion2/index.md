@@ -71,49 +71,61 @@ Por lo tanto cuando creamos un contenedor ocupa muy poco de disco duro, porque l
 
 Veamos el tamaño de nuestra imagen `ubuntu`:
 
-    $ docker images
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    ubuntu              latest              f63181f19b2f        7 days ago          72.9MB
+```bash
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              latest              f63181f19b2f        7 days ago          72.9MB
+```
 
 Si creamos un contenedor interactivo:
 
-    $ docker run -it --name contenedor1 ubuntu /bin/bash 
+```bash
+$ docker run -it --name contenedor1 ubuntu /bin/bash 
+```
 
 Nos salimos, y a continuación visualizamos los contenedores con la opción `-s` (size):
 
-    $ docker ps -a -s
-    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES               SIZE
-    a2d1ce6990d8        ubuntu              "/bin/bash"              8 seconds ago       Exited (130) 5 seconds ago                       contenedor1         0B (virtual 72.9MB)
+```bash
+$ docker ps -a -s
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES               SIZE
+a2d1ce6990d8        ubuntu              "/bin/bash"              8 seconds ago       Exited (130) 5 seconds ago                       contenedor1         0B (virtual 72.9MB)
+```
 
 Nos damos cuenta que el tamaño real del contenedor es 0B y el virtual, el que comparte con la imagen son los 72,9MB que es el tamaño de la imagen ubuntu.
 
 Si a continuación volvemos a acceder al contenedor y creamos un fichero:
 
-    $ docker start contenedor1
-    contenedor1
-    $ docker attach contenedor1
-    root@a2d1ce6990d8:/# echo "00000000000000000">file.txt
+```bash
+$ docker start contenedor1
+contenedor1
+$ docker attach contenedor1
+root@a2d1ce6990d8:/# echo "00000000000000000">file.txt
+```
 
 Y volvemos a ver el tamaño, vemos que ha crecido con la creación del fichero:
 
-    $ docker ps -a -s
-    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES               SIZE
-    a2d1ce6990d8        ubuntu              "/bin/bash"              56 seconds ago      Exited (0) 2 seconds ago                        contenedor1         52B (virtual 72.9MB)
+```bash
+$ docker ps -a -s
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES               SIZE
+a2d1ce6990d8        ubuntu              "/bin/bash"              56 seconds ago      Exited (0) 2 seconds ago                        contenedor1         52B (virtual 72.9MB)
+```
 
-Por todo lo que hemos explicado, ahora se entiende  que **no podemos eliminar una imágen cuando tenemos contendores creados a aprtir de ella**.
+Por todo lo que hemos explicado, ahora se entiende  que **no podemos eliminar una imágen cuando tenemos contenedores creados a a partir de ella**.
 
 Por último al solicitar información de la imágen, podemos ver información sobre las capas:
 
-    $ docker inspect ubuntu:latest
-    ...
-    "RootFS": {
-            "Type": "layers",
-            "Layers": [
-                "sha256:9f32931c9d28f10104a8eb1330954ba90e76d92b02c5256521ba864feec14009",
-                "sha256:dbf2c0f42a39b60301f6d3936f7f8adb59bb97d31ec11cc4a049ce81155fef89",
-                "sha256:02473afd360bd5391fa51b6e7849ce88732ae29f50f3630c3551f528eba66d1e"
-            ]
-    ...
+```bash
+$ docker inspect ubuntu:latest
+...
+"RootFS": {
+        "Type": "layers",
+        "Layers": [
+            "sha256:9f32931c9d28f10104a8eb1330954ba90e76d92b02c5256521ba864feec14009",
+            "sha256:dbf2c0f42a39b60301f6d3936f7f8adb59bb97d31ec11cc4a049ce81155fef89",
+            "sha256:02473afd360bd5391fa51b6e7849ce88732ae29f50f3630c3551f528eba66d1e"
+        ]
+...
+```
 
 ## Creación de contenedores desde imágenes
 
@@ -126,16 +138,21 @@ Todas las imágenes tiene definidas un proceso que se ejecuta por defecto, pero 
 
 Por ejemplo en la imagen `ubuntu` el proceso pode defecto es `bash`, por lo tanto podemos ejecutar:
 
-    $  docker run -it --name contenedor1 ubuntu 
+```bash
+$ docker run -it --name contenedor1 ubuntu 
+```
 
 Pero podemos indicar el comando a ejecutar en la creación del contenedor:
 
-    $ docker run ubuntu /bin/echo 'Hello world'
+```bash
+$ docker run ubuntu /bin/echo 'Hello world'
+```
 
 Otro ejemplo: la imagen `httpd:2.4` ejecuta un servidor web por defecto, por lo tanto al crear el contenedor:
 
-    $ docker run -d --name my-apache-app -p 8080:80 httpd:2.4
-
+```bash
+$ docker run -d --name my-apache-app -p 8080:80 httpd:2.4
+```
 
 ## Ejercicios
 {: .fs-9 }
