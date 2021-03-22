@@ -26,26 +26,7 @@ Docker está formado por varios componentes:
 * **Docker Client**: Es el cliente de línea de comandos (CLI) que nos permite gestionar el Docker Engine. El cliente docker se puede configurar para trabajar con con un Docker Engine local o remoto, permitiendo gestionar tanto nuestro entorno de desarrollo local, como nuestro entorno de producción.
 * **Docker Registry**: La finalidad de este componente es almacenar las imágenes generadas por el Docker Engine. Puede estar instalada en un servidor independiente y es un componente fundamental, ya que nos permite distribuir nuestras aplicaciones. Es un proyecto open source que puede ser instalado gratuitamente en cualquier servidor, pero, como hemos comentado, el proyecto nos ofrece **Docker Hub**.
 
-## Instalación de docker
 
-En debian vamos a instalar la versión de la comunidad:
-
-```bash
-apt install docker.io
-```
-
-Si queremos usar el cliente de docker con un usuario sin privilegios:
-
-```bash
-usermod -aG docker usuario
-```
-
-Volvemos acceder con el usuario al sistema, y comprobamos que ya podemos usar el cliente docker con el usuario sin privilegios, por ejemplo, podemos comprobar la versión que hemos instalado:
-
-```bash
-$ docker --version
-Docker version 18.09.1, build 4c52b90
-```
 
 ## El "Hola Mundo" de docker
 
