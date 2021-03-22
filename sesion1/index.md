@@ -13,3 +13,9 @@ Para empezar el curso vamos a estudiar los conceptos principales con estas dos p
 
 * [Introducción a los contenedores](introduccion_contenedores.pdf)
 * [Introducción a Docker](pdf/introduccion_docker.pdf)
+
+## Documentación oficial y enlaces de interés
+
+* [Página oficial sobre docker](https://www.docker.com/)
+* [Documentación oficial](https://docs.docker.com/)
+* [Docker Hub](https://hub.docker.com/)
