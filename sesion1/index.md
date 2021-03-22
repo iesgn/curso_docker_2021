@@ -16,6 +16,6 @@ Para empezar el curso vamos a estudiar los conceptos principales con estas dos p
 
 ## Documentación oficial y enlaces de interés
 
-* [Página oficial sobre docker](https://www.docker.com/)
+* [Página oficial](https://www.docker.com/)
 * [Documentación oficial](https://docs.docker.com/)
 * [Docker Hub](https://hub.docker.com/)
