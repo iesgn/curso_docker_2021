@@ -23,7 +23,7 @@ $ docker attach contendor1
 root@2bfa404bace0:/#
 ```
 
-Si el contenedor se está ejecutando podemos ejecutar comando en él con el subcomando `exec`:
+Si el contenedor se está ejecutando podemos ejecutar comandos en él con el subcomando `exec`:
 
 ```bash
 $ docker start contendor1
