@@ -32,8 +32,6 @@ $ curl http://localhost:8080
 
 Vemos como al eliminar el contenedor, la información que habíamos guardado en el fichero `index.html` se pierde, y al crear un nuevo contenedor ese fichero tendrá el contenido original.
 
-> NOTA: En la instrucción `docker exec` hemos ejecutado el comando con `bash -c` qie nos permite ejecutar uno o mas comandos en el contenedor de forma más compleja (por ejemplo, indicando ficheros dentro del contenedor).
-
 ## Los datos en los contenedores
 
 ![docker](img/types-of-mounts.png)
