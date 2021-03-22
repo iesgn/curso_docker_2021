@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Ejemplos Dockerfile
+title: Instalación de docker
 nav_order: 2
 parent: Introducción
 ---
