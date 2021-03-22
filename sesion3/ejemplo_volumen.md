@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Ejemplo usando volúmenes docker"
-nav_order: 1
-parent: "Asociando almacenamiento a los contenedores"
+nav_order: 5
+parent: "Almacenamiento"
 ---
 
 ## Ejemplo usando volúmenes docker

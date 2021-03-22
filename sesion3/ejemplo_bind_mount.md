@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Ejemplo usando bind mount"
-nav_order: 2
-parent: "Asociando almacenamiento a los contenedores"
+nav_order: 6
+parent: "Almacenamiento"
 ---
 
 ## Ejemplo usando bind mount
