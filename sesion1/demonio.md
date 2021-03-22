@@ -30,7 +30,7 @@ Hay que tener en cuenta que un contenedor que esta ejecutándose no puede ser el
 $ docker rm -f contenedor2
 ```
 
-## Ejemplo
-{: .fs-9 }
+## Ejercicios
+
 
 1. Crea un contenedor demonio con un servidor nginx, usando la imagen oficial de nginx. Al crear el contenedor, ¿has tenido que indicar algún comando para que lo ejecute? Accede al navegador web y comprueba que el servidor esta funcionando. Muestra los logs del contenedor.

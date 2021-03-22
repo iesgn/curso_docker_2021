@@ -26,3 +26,7 @@ Docker version 18.09.1, build 4c52b90
 ```
 
 Si queréis instala la versión de Docker ofrecida por la empresa (`docker-ce`) podéis ver las instrucciones de instalación en vuestro sistema operativo en la siguiente [página](https://docs.docker.com/get-docker/).
+
+## Ejercicios
+
+1. Instala docker en una máquina y configuralo para que se pueda usar con un usuario sin privilegios.

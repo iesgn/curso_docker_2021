@@ -73,7 +73,5 @@ $ docker rm elastic_johnson
 ```
 
 ## Ejercicios
-{: .fs-9 }
 
-1. Instala docker en una máquina y configuralo para que se pueda usar con un usuario sin privilegios.
-2. Ejecuta un contenedor a paratir de la imagen `hello-word`. Comprueba que nos devuelve la salida adecuada. Comprueba que no se está ejecutando. Lista los contenedores que están parado. Borra el contenedor.
+1. Ejecuta un contenedor a paratir de la imagen `hello-word`. Comprueba que nos devuelve la salida adecuada. Comprueba que no se está ejecutando. Lista los contenedores que están parado. Borra el contenedor.
