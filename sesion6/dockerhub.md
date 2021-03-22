@@ -1,6 +1,6 @@
 ---
 layout: default
-title: En DockerHub
+title: Creación de imágenes en DockerHub
 nav_order: 8
 parent: Creación de imágenes
 ---

@@ -15,14 +15,3 @@ Para crea un contenedor que sirva nuestra aplicación, tendremos que crear una i
 
 ![docker](img/build.png)
 
-* [Creación de una nueva imagen a partir de un contenedor](contenedor.html)
-* [Creación de imágenes con fichero Dockerfile](dockerfile.html)
-* [Creación automática de imágenes en Docker Hub](dockerhub.html)
-
-Veamos algunos ejemplos de ficheros `Dockerfile`:
-
-* [Ejemplos de ficheros Dockerfile](ejemplos_dockerfile.html)
-
-Una vez que hemos visto cómo crear imágenes docker, podemos estudiar el proceso de puesta en producción de aplicaciones web usando docker:
-
-* [Ciclo de vida de nuestras aplicaciones con docker](ciclo_vida.html)
