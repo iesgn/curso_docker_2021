@@ -2,7 +2,7 @@
 layout: default
 title: "Ejemplo usando volúmenes docker"
 nav_order: 5
-parent: "Almacenamiento"
+parent: Almacenamiento
 ---
 
 ## Ejemplo usando volúmenes docker
