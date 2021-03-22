@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Ejemplo: Contenedor mariadb con almacenamiento persistente"
-nav_order: 5
+title: "Contenedor mariadb con almacenamiento persistente"
+nav_order: 7
 parent: Almacenamiento
 ---
 
-# Ejemplo: Contenedor mariadb con almacenamiento persistente
+# Contenedor mariadb con almacenamiento persistente
 
 Si estudiamos la documentación de la [imagen mariadb](https://hub.docker.com/_/mariadb) en Docker Hub, nos indica que podemos crear un contenedor con información persistente de maridb, de la siguiente forma:
 
