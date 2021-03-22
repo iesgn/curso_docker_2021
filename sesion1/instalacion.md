@@ -4,7 +4,7 @@ title: Instalación de docker
 nav_order: 2
 parent: Introducción
 ---
-## Instalación de docker
+# Instalación de docker
 
 En debian vamos a instalar la versión de la comunidad:
 
