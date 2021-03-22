@@ -11,7 +11,7 @@ Docker es una tecnología de virtualización "ligera" cuyo elemento básico es l
 
 Para empezar el curso vamos a estudiar los conceptos principales con estas dos presentaciones:
 
-* [Introducción a los contenedores](introduccion_contenedores.pdf)
+* [Introducción a los contenedores](pdf/introduccion_contenedores.pdf)
 * [Introducción a Docker](pdf/introduccion_docker.pdf)
 
 ## Documentación oficial y enlaces de interés
