@@ -3,7 +3,7 @@ layout: default
 title: "Volúmenes docker y bind mount"
 nav_order: 3
 parent: Almacenamiento
-has_children: true
+
 ---
 # Volúmenes docker y bind mount
 
