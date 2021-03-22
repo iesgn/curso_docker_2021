@@ -1,6 +1,6 @@
 ---
 layout: default
-title: A partir de un contenedor
+title: Creación de imágenes a partir de un contenedor
 nav_order: 8
 parent: Creación de imágenes
 ---
