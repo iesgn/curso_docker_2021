@@ -28,14 +28,3 @@ Los subcomandos más usados son:
 * `docker-compose build`: Ejecuta, si está indicado, el proceso de construcción de una imagen que va a ser usado en el `docker-compose.yml`  a partir de los  ficheros `Dockerfile` que se indican.
 * `docker-compose top`: Muestra  los procesos que están ejecutándose en cada uno de los contenedores de los servicios.
 
-## Ejercicios
-
-1. Instala docker-compose en tu ordenador. Copia el fichero `docker-compose.yml` de la documentación de la imagen oficial de wordpress.
-2. Modifica el `docker-compose.yml` para que use el puerto 8001.
-3. Modifica el `docker-compose.yml`, para que la base de datos se llame db_wordpress.
-4. Modifica el `docker-compose.yml` para usar bind mount en vez de volúmenes.
-5. Levanta el escenario con `docker-compose`.
-6. Muestra los contenedores con `docker-compose`.
-7. Accede a la aplicación y comprueba que funciona.
-8. Comprueba el almacenamiento que has definido y que se ha creado una nueva red de tipo bridge.
-9. Borra el escenario con `docker-compose`.
