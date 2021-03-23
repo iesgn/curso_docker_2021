@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Contenedor mariadb con almacenamiento persistente"
-nav_order: 6
+title: "Ejemplo 2: Contenedor mariadb con almacenamiento persistente"
+nav_order: 7
 parent: Almacenamiento
 ---
 
