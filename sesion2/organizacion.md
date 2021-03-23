@@ -78,11 +78,3 @@ $ docker inspect ubuntu:latest
         ]
 ...
 ```
-
-## Ejercicios 
-
-1. Crea un contenedor demonio con la imagen php:7.4-apache.
-2. Comprueba el tamaño del contenedor en el disco duro.
-3. Con la instrucción `docker cp` podemos copiar ficheros a o desde un contenedor. Copia un fichero `info.php` al directorio `/var/www/html` del contenedor.
-4. Vuelve a comprobar el espacio ocupado por el contenedor.
-5. Accede al fichero `info.php` desde un navegador web.
