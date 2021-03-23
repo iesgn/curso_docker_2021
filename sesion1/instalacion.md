@@ -54,7 +54,7 @@ Volvemos acceder con el usuario al sistema, y comprobamos que ya podemos usar el
 
 ```bash
 $ docker --version
-Docker version 18.09.1, build 4c52b90
+Docker version 20.10.5, build 55c4c88
 ```
 
 Si queréis instala la versión de Docker para otro sistema operativo podéis ver las instrucciones de instalación en la siguiente [página](https://docs.docker.com/get-docker/).
@@ -67,12 +67,18 @@ Si usamos debian vamos a instalar la versión de la comunidad:
 apt install docker.io
 ```
 
+El caso de Debian la versión de la comunidad es la siguiente:
+
+```bash
+$ docker --version
+Docker version 18.09.1, build 4c52b90
+```
+
 En Ubuntu:
 
 ```bash
 sudo apt install moby-engine moby-cli
 ```
-
 ## Ejercicios
 
 1. Instala docker en una máquina y configuralo para que se pueda usar con un usuario sin privilegios.
