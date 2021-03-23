@@ -8,7 +8,7 @@ parent: Introducción
 
 ## Instalación de la versión oficial de docker para Debian
 
-Siguiendo la documentación para la instalación en [Debian](https://docs.docker.com/engine/install/debian/) y de [Ubuntu](https://docs.docker.com/engine/install/ubuntu/), podemos resumir los pasos en los siguientes:
+Siguiendo la documentación para la instalación en [Debian](https://docs.docker.com/engine/install/debian/), podemos resumir los pasos en los siguientes:
 
 Instalamos los paquetes necesarios:
 
