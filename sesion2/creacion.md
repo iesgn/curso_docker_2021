@@ -7,10 +7,11 @@ parent: Imágenes
 
 # Creación de contenedores desde imágenes
 
-Si navegas un poco por las distintas imágenes que encuentras en el registro de Docker Hub, te darás cuenta, que existen dos tipos de imágenes según la utilidad que nos ofrecen.
+Si navegas un poco por las distintas imágenes que encuentras en el registro de Docker Hub, te darás cuenta, que existen tres tipos de imágenes según la utilidad que nos ofrecen.
 
 * Ejecutaremos contenedores de distintos sistemas operativos (Ubuntu, CentOs, Debian, Fedora....).
 * Ejecutaremos contenedores que tengan servicios asociados (Apache, MySQL, Tomcat....).
+* Ejecutaremos contenedores que tengan servicios asociados y que tienen instalada alguna aplicación web (WordPress, Nextcloud,...)
 
 Todas las imágenes tiene definidas un proceso que se ejecuta por defecto, pero en la mayoría de los casos podemos indicar un proceso al crear un contenedor.
 
