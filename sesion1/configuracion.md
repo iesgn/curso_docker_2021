@@ -50,7 +50,3 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 MariaDB [(none)]> 
 ```
-
-## Ejercicios
-
-1. Crea un contenedor con la aplicación Nextcloud, mirando la documentación en docker Hub, para personalizar el nombre de la base de datos sqlite que va a utilizar.

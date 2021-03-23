@@ -71,7 +71,3 @@ o con su nombre:
 ```bash
 $ docker rm elastic_johnson
 ```
-
-## Ejercicios
-
-1. Ejecuta un contenedor a paratir de la imagen `hello-word`. Comprueba que nos devuelve la salida adecuada. Comprueba que no se está ejecutando. Lista los contenedores que están parado. Borra el contenedor.

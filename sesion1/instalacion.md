@@ -125,7 +125,3 @@ El caso de Debian 10 la versión de la comunidad es la siguiente:
 $ docker --version
 Docker version 18.09.1, build 4c52b90
 ```
-
-## Ejercicios
-
-1. Instala docker en una máquina y configúralo para que se pueda usar con un usuario sin privilegios.
