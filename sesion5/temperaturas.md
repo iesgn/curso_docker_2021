@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ejemplo 2: Despliegue de la aplicación Temperaturas"
-nav_order: 5
+nav_order: 6
 parent: Escenarios multicontenedor
 ---
 

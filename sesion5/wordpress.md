@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ejemplo 3: Despliegue de la aplicación WordPress + Mariadb"
-nav_order: 6
+nav_order: 7
 parent: Escenarios multicontenedor
 ---
 
@@ -45,9 +45,6 @@ services:
 
 
 
-* `depend on`: Indica la dependencia entre contenedores. No se va a iniciar un contenedor hasta que otro este funcionando. [Más información](https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on).
-
-Cuando creamos un escenario con `docker-compose` se crea una **nueva red definida por el usuario docker** donde se conectan los contenedores, por lo tanto, se pueden tenemos resolución por dns que resuelve tanto el nombre del contenedor (por ejemplo, `servidor_mysql`) como el alias (por ejemplo, `db`).
 
 Para crear el escenario:
 
