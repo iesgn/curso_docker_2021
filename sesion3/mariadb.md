@@ -7,10 +7,10 @@ parent: Almacenamiento
 
 # Contenedor mariadb con almacenamiento persistente
 
-Si estudiamos la documentación de la [imagen mariadb](https://hub.docker.com/_/mariadb) en Docker Hub, nos indica que podemos crear un contenedor con información persistente de maridb, de la siguiente forma:
+Si estudiamos la documentación de la [imagen mariadb](https://hub.docker.com/_/mariadb) en Docker Hub, nos indica que podemos crear un contenedor con información persistente de mariadb, de la siguiente forma:
 
 ```bash
-$ docker run --name some-mariadb -v /home/usuario/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb
+$ docker run --name some-mariadb -v /home/vagrant/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb
 ```
 
 Es decir se va a crear un directorio `/home/usuario/datadir` en el host, donde se va a guardar la información de la base de datos. Si tenemos que crear de nuevo el contenedor indicaremos ese directorio como bind mount y volveremos a tener accesible la información.
@@ -52,10 +52,3 @@ Para terminar: ¿Qué debemos guardar de forma persistente en un contenedor?
 * Los datos de la aplicación
 * Los logs del servicio
 * La configuración del servicio: En este caso podemos añadirla a la imagen, pero será necesaria la creación de una nueva imagen si cambiamos la configuración. Si la guardamos en un volumen hay que tener en cuanta que ese fichero lo tenemos que tener en el entorno de producción (puede ser bueno, porque las configuraciones de los distintos entornos puede variar).
-
-## Ejercicios
-
-#. Crea un contenedor desde la imagen `nextcloud` (usando sqlite) configurando el almacenamiento como nos muestra la documentación de la imagen en Docker Hub (pero utilizando bind mount). Sube algún fichero.
-#. Elimina el contenedor.
-#. Crea un contenedor nuevo con la misma configuración de volúmenes. Comprueba que la información que teníamos (ficheros, usuario, ...), sigue existiendo.
-#. Comprueba el contenido de directorio que se ha creado en el host.
