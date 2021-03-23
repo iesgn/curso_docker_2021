@@ -5,9 +5,9 @@ nav_order: 4
 parent: Escenarios multicontenedor
 ---
 
- # El fichero docker-compose.yml
+# El fichero docker-compose.yml
 
- En el fichero `docker-compose.yml` vamos a definir el escenario. El programa docker-compose se debe ejecutar en el directorio donde este ese fichero. Por ejemplo para la ejecución de mediawiki persistente podríamos tener un fichero con el siguiente contenido:
+En el fichero `docker-compose.yml` vamos a definir el escenario. El programa docker-compose se debe ejecutar en el directorio donde este ese fichero. Por ejemplo para la ejecución de mediawiki persistente podríamos tener un fichero con el siguiente contenido:
 
 ...
 
