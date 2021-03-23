@@ -67,6 +67,12 @@ Si usamos debian vamos a instalar la versión de la comunidad:
 apt install docker.io
 ```
 
+En Ubuntu:
+
+```bash
+sudo apt install moby-engine moby-cli
+```
+
 ## Ejercicios
 
 1. Instala docker en una máquina y configuralo para que se pueda usar con un usuario sin privilegios.
