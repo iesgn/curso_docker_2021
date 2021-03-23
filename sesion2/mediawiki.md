@@ -57,5 +57,5 @@ Si accedemos a la ip de nuestro ordenador, al puerto 8082, podemos observar que 
 
 ![mediawiki](img/mediawiki3.png)
 
-**Nota: Puedes observar que la primera imagen que se baja, descargas todas las capas, sin embargo las otras versiones de la imagen, sólo descargan las capas que difieren de la primera.**
+**Nota: Puedes observar que la primera imagen que se baja, descargas todas las capas, sin embargo al descargar las otras versiones de la imagen, sólo se bajan las capas que difieren de la primera.**
 
