@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Contenedor mariadb con almacenamiento persistente"
-nav_order: 7
+nav_order: 6
 parent: Almacenamiento
 ---
 

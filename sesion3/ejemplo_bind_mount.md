@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ejemplo usando bind mount"
-nav_order: 6
+nav_order: 5
 parent: Almacenamiento
 ---
 
