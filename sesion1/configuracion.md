@@ -17,10 +17,12 @@ root@91e81200c633:/# echo $USUARIO
 prueba
 ```
 
+## Configuración de un contenedor con la imagen mariadb
+
 En ocasiones es obligatorio el inicializar alguna variable de entorno para que el contenedor pueda ser ejecutado. si miramos la [documentación](https://hub.docker.com/_/mariadb) en Docker Hub de la imagen mariadb, observamos que podemos definir algunas variables de entorno para la creación del contenedor (por ejemplo: `MYSQL_DATABASE`,`MYSQL_USER`, `MYSQL_PASSWORD`,...). Pero hay una que la tenemos que indicar de forma obligatoria, la contraseña del usuario `root` (`MYSQL_ROOT_PASSWORD`), por lo tanto:
 
 ```bash
-$ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb
+$ docker run -D --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw mariadb
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED                STATUS              PORTS               NAMES
 9c3effd891e3        mariadb             "docker-entrypoint.s…"   8 seconds ago       Up 7   seconds        3306/tcp            some-mariadb
@@ -40,13 +42,40 @@ Y para acceder podemos ejecutar:
 ```bash
 $ docker exec -it some-mariadb bash                                  
 root@9c3effd891e3:/# mysql -u root -p"$MYSQL_ROOT_PASSWORD" 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 21
-Server version: 10.5.8-MariaDB-1:10.5.8+maria~focal mariadb.org binary distribution
+...
 
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+MariaDB [(none)]> 
+```
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+### Accediendo a servidor de base de datos desde el exterior
 
+En el ejemplo anterior hemos ejecutado un comando `bash` para acceder al contenedor y desde dentro hemos utilizado el cliente de mariadb para acceder a la base de datos. En esta ocasión vamos a mapear los puertos para acceder desde el exterior a la base de datos:
+
+Lo primero que vamos a hacer es eliminar el contenedor anterior:
+
+```bash 
+$ docker rm -f some-mariadb
+```
+
+Y a continuación vamos a crear otro contenedor, pero en esta ocasión vamos a mapear el puerto 3306 del anfitrión con el puerto 3306 del contenedor:
+
+```bash 
+docker run -d -p 3306:3306 --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw mariadb
+```
+
+Comprobamos que los puertos se han mapeado y que el contenedor está ejecutándose:
+
+```bash
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+816ea7df5c41        mariadb             "docker-entrypoint.s…"   3 seconds ago       Up 2 seconds        0.0.0.0:3306->3306/tcp   some-mariadb
+```
+
+Ahora desde nuestro equipo que tiene la ip `192.168.121.54` vamos a conectarnos a la base de datos (hay que tener instalado el cliente de mariadb):
+
+```bash
+$ mysql -u root -p -h 192.168.121.54
+Enter password: 
+...
 MariaDB [(none)]> 
 ```
