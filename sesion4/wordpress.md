@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Ejemplo: Instalación de Wordpress"
-nav_order: 6
+title: "Ejemplo 3: Despliegue de Wordpress + mariadb"
+nav_order: 8
 parent: Redes
 ---
-# Ejemplo: Instalación de Wordpress
+# Ejemplo 3: Despliegue de Wordpress + mariadb
 
 Para la instalación de WordPress necesitamos dos contenedores: la base de datos (imagen `mariadb`) y el servidor web con la aplicación (imagen `wordpress`). Los dos contenedores tienen que estar en la misma red y deben tener acceso por nombres (resolución DNS) ya que de principio no sabemos que ip va a coger cada contenedor. Por lo tanto vamos a crear los contenedores en la misma red:
 
@@ -48,9 +48,3 @@ Algunas observaciones:
 * Si te das cuenta la variable de entorno `WORDPRESS_DB_HOST` la hemos inicializado al nombre del servidor de base de datos. Como están conectada a la misma red definida por el usuario, el contenedor wordpress al intentar acceder al nombre `servidor_mysql` estará accediendo al contenedor de la base de datos.
 * Al servicio al que vamos a acceder desde el exterior es al servidor web, es por lo que hemos mapeado los puertos con la opción `-p`. Sin embargo en el contenedor de la base de datos no es necesario mapear los puertos porque no vamos a acceder a ella desde el exterior. Sin embargo, el contenedor `servidor_wp` puede acceder al puerto 3306 del `servidor_mysql` sin problemas ya que están conectados a la misma red.
 
-## Ejercicios
-
-1. Ejecuta una instrucción docker para visualizar el contenido del fichero `wp-config.php` y verifica que los parámetros de conexión a la base de datos son los mismo que los indicados en las variables de entorno.
-2. Ejecuta una instrucción docker para comprobar que desde el `servidor_wp` podemos hacer ping usando el nombre `servidor_mysql`. (Tendrás que instalar el paquete `iputils-ping` en el contenedor).
-3. Visualiza el fichero `/etc/mysql/mariadb.conf.d/50-server.cnf` del contenedor con la base de datos y comprueba cómo está configurado el parámetro `bind-address`.
-4. Instala otro CMS PHP siguiendo la documentación de Docker Hub de la aplicación seleccionada.
