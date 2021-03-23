@@ -47,14 +47,3 @@ DRIVER              VOLUME NAME
 ...
 local               wwwroot
 ```
-
-# Ejercicios
-
-Vamos a trabajar con volúmenes docker:
-#. Crea un volumen docker que se llame `miweb`.
-#. Crea un contenedor desde la imagen `php:7.4-apache` donde montes en el directorio `/var/www/html` (que sabemos que es el docuemntroot del servidor que nos ofrece esa imagen) el volumen docker que has creado.
-#. Utiliza el comando `docker cp` para copiar un fichero `info.php` en el directorio `/var/www/html`.
-#. Accede al contenedor desde el navegador para ver la información ofrecida por el fichero `info.php`.
-#. Borra el contenedor
-#. Crea un nuevo contenedor y monta el mismo volumen como en el ejercicio anterior.
-#. Accede al contenedor desde el navegador para ver la información ofrecida por el fichero `info.php`. ¿Seguía existiendo ese fichero?
