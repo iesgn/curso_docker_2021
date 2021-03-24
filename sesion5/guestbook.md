@@ -6,13 +6,7 @@ parent: Escenarios multicontenedor
 ---
 # Ejemplo 1: Despliegue de la aplicación guestbook
 
-## Con volúmenes!!!!!
-
-En este ejemplo vamos a desplegar una aplicación web que requiere de dos servicios (servicio web y servicio de base de datos) para su ejecución. La aplicación se llama GuestBook y necesita los dos siguientes servicios:
-
-* La aplicación guestbook es una aplicación web desarrollada en python que es servida por el puerto 5000/tcp. Utilizaremos la imagen `iesgn/guestbook`.
-* Esta aplicación guarda la información en una base de datos no relacional redis, que utiliza el puerto 6379/tcp para conectarnos. Usaremos la imagen `redis`.
-
+En este ejemplo vamos a desplegar con docker-compose la aplicación *guestbook*, que estudiamos en el módulo de redes: [Ejemplo 1: Despliegue de la aplicación Guestbook](../sesion4/guestbook.html).
 
 En el fichero `docker-compose.yml` vamos a definir el escenario. El programa `docker-compose` se debe ejecutar en el directorio donde este ese fichero. 
 
@@ -30,8 +24,6 @@ services:
     image: redis
     restart: always
 ```
-
-
 
 Para crear el escenario:
 
