@@ -52,7 +52,16 @@ Stopping guestbook    ... done
 Stopping redis ... done
 ```
 
+Para eliminar el escenario:
 
+```bash
+docker-compose down
+Stopping guestbook ... done
+Stopping redis     ... done
+Removing guestbook ... done
+Removing redis     ... done
+Removing network guestbook_default
+```
 
 
 
