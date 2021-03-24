@@ -11,6 +11,7 @@ En este ejemplo vamos a desplegar con docker-compose la aplicación *Temperatura
 
 En este caso el fichero `docker-compose.yml` puede tener esta forma:
 
+```yaml
 version: '3.1'
 services:
   frontend:
