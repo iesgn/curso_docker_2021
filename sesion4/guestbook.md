@@ -30,7 +30,7 @@ $ docker run -d -p 80:5000 --name guestbook --network red_guestbook iesgn/guestb
 
 Algunas observaciones:
 
-* No es necesario mapear el puerto de `redis`, ya que no vasmo a acceder desde el exterior. Sin embargo la aplicación `guestbook` va a poder acceder a la base de datos proque están conectado a la misma red.
+* No es necesario mapear el puerto de `redis`, ya que no vamos a acceder desde el exterior. Sin embargo la aplicación `guestbook` va a poder acceder a la base de datos porque están conectado a la misma red.
 * Al nombrar al contenedor de la base de datos con `redis` se crea una entrada en el DNS que resuelve ese nombre con la ip del contenedor. Como hemos indicado, por defecto, la aplicación guestbook usa ese nombre para acceder.
 
 ![guestbook](img/guestbook.png)

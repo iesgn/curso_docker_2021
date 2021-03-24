@@ -43,7 +43,7 @@ Accede de nuevo a la aplicación comprueba que la aplicación sigue configurada 
 En este caso, vamos a crear un directorio en nuestro ordenador, que es el que vamos a montar en el contenedor:
 
 ```bash
-mkdir datoos_nextcloud
+mkdir datos_nextcloud
 ```
 
 Y creamos el contenedor con la siguiente instrucción:
