@@ -28,3 +28,38 @@ Los subcomandos más usados son:
 * `docker-compose build`: Ejecuta, si está indicado, el proceso de construcción de una imagen que va a ser usado en el `docker-compose.yml`  a partir de los  ficheros `Dockerfile` que se indican.
 * `docker-compose top`: Muestra  los procesos que están ejecutándose en cada uno de los contenedores de los servicios.
 
+## Despliegue de Let's Chat
+
+Para desplegar la aplicación Let's Chat que vimos en el punto anterior, ejecutamos la siguiente instrucción en el directorio donde tengamos el fichero `docker-compose.yml`:
+
+```bash
+$ docker-compose up -d
+Creating network "letschat_default" with the default driver
+Creating mongo ... done
+Creating letschat ... done
+```
+
+Podemos ver los contenedores que se están ejecutando:
+
+```bash
+$ docker-compose ps
+  Name               Command             State               Ports             
+-------------------------------------------------------------------------------
+letschat   npm start                     Up      5222/tcp, 0.0.0.0:80->8080/tcp
+mongo     docker-entrypoint.sh mongod   Up      27017/tcp                   
+```
+
+Podemos acceder desde el navegador a la aplicación:
+
+![letschat](img/letschat.png)
+
+Finalmente podemos destruir el escenario:
+
+```bash
+$ docker-compose down 
+Stopping letschat ... done
+Stopping mongo   ... done
+Removing letschat ... done
+Removing mongo   ... done
+Removing network letschat_default
+```
