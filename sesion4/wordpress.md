@@ -31,7 +31,7 @@ $ docker run -d --name servidor_wp \
                 -e WORDPRESS_DB_USER=user_wp \
                 -e WORDPRESS_DB_PASSWORD=asdasd \
                 -e WORDPRESS_DB_NAME=bd_wp \
-                -p 80:80  
+                -p 80:80 \
                 wordpress
 
 $ docker ps
