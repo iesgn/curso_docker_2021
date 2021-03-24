@@ -12,9 +12,7 @@ Por ejemplo para la ejecución de wordpress persistente podríamos tener un fich
 
 ```yaml
 version: '3.1'
-
 services:
-
   wordpress:
     container_name: servidor_wp
     image: wordpress
@@ -43,14 +41,11 @@ services:
 
 
 
-
-
-
 Para crear el escenario:
 
 ```bash
 $ docker-compose up -d
-Creating network "dc_default" with the default driver
+Creating network "wp_default" with the default driver
 Creating servidor_wp    ... done
 Creating servidor_mysql ... done
 ```
@@ -62,7 +57,7 @@ $ docker-compose ps
      Name                   Command               tate         Ports       
 ---------------------------------------------------------------------------
 servidor_mysql   docker-entrypoint.sh mysqld      Up      306/tcp          
-servidor_wp      docker-entrypoint.sh apach ...   Up      0.0..0:80-* `0/tcp`
+servidor_wp      docker-entrypoint.sh apach ...   Up      0.0.0.0:80->80/tcp
 ```
 
 Para parar los contenedores:

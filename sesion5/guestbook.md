@@ -29,7 +29,7 @@ Para crear el escenario:
 
 ```bash
 $ docker-compose up -d
-Creating network "ubuntu_default" with the default driver
+Creating network "guestbook_default" with the default driver
 Creating guestbook ... done
 Creating redis     ... done
 ```
