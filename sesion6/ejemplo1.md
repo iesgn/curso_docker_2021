@@ -10,6 +10,13 @@ parent: Creación de imágenes
 
 
 
+docker run -d -p 80:80 --name ejemplo1 josedom24/ejemplo1:v1
+
+
+
+
+
+
 
 
 
