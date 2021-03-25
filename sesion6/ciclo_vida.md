@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Ciclo de vida de las aplicaciones
-nav_order: 9
+nav_order: 7
 parent: Creación de imágenes
 ---
 # Ciclo de vida de nuestras aplicaciones con docker

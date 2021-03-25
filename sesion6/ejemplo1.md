@@ -1,17 +1,16 @@
 ---
 layout: default
-title: Ejemplos Dockerfile
-nav_order: 8
+title: Construcción de imágenes con una página estática
+nav_order: 4
 parent: Creación de imágenes
 ---
-# Ejemplos de ficheros Dockerfile
-{: .no_toc }
+# Construcción de imágenes con una página estática
 
-## Contenido
-{: .no_toc .text-delta }
 
-1. TOC
-{:toc}
+
+
+
+
 
 Los siguientes ejemplos lo puedes encontrar en el siguiente [repositorio](https://github.com/josedom24/ejemplos_dockerfile).
 

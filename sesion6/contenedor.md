@@ -1,20 +1,10 @@
 ---
 layout: default
 title: Creación de imágenes a partir de un contenedor
-nav_order: 8
+nav_order: 1
 parent: Creación de imágenes
 ---
 # Creación de una nueva imagen a partir de un contenedor
-{: .no_toc }
-
-## Contenido
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
-
-* [Presentación](https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/imagen_contenedor.pdf)
 
 La primera forma para personalizar las imágenes y distribuirlas es partiendo de un contenedor en ejecución. Para ello vamos a tener varias posibilidades:
 

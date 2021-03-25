@@ -1,20 +1,10 @@
 ---
 layout: default
 title: Creación de imágenes a partir de un Dockerfile
-nav_order: 8
+nav_order: 2
 parent: Creación de imágenes
 ---
 # Creación de imágenes con fichero Dockerfile
-{: .no_toc }
-
-## Contenido
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
-
-* [Presentación](https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/dockerfile.pdf)
 
 El método anterior tiene dos inconvenientes:
 
@@ -128,7 +118,7 @@ Y ya podríamos crear un nuevo contenedor o distribuir la imagen usando alguno d
 
 Si usamos el parámetro `--no-cache` en `docker build` haríamos la construcción de una imagen sin usar las capas cacheadas por haber realizado anteriormente imágenes con capas similares.
 
-## Buenas prácticas al crear DockerfilePermalink
+## Buenas prácticas al crear Dockerfile
 
 * **Los contenedores deber ser "efímeros"**: Cuando decimos "efímeros" queremos decir que la creación, parada, despliegue de los contenedores creados a partir de la imagen que vamos a generar con nuestro Dockerfile debe tener una mínima configuración.
 * **Uso de ficheros `.dockerignore`**: Como hemos indicado anteriormente, todos los ficheros del contexto se envían al *docker engine*, es recomendable usar un directorio vacío donde vamos creando los ficheros que vamos a enviar. Además, para aumentar el rendimiento, y no enviar al daemon ficheros innecesarios podemos hacer uso de un fichero `.dockerignore`, para excluir ficheros y directorios.
