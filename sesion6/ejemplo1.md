@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Construcción de imágenes con una página estática
+title: "Ejemplo 1: Construcción de imágenes con una página estática"
 nav_order: 4
 parent: Creación de imágenes
 ---
-# Construcción de imágenes con una página estática
+# Ejemplo 1: Construcción de imágenes con una página estática
+
+
 
 
 

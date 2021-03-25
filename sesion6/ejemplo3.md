@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Construcción de imágenes configurable con variables de entorno
+title: "Ejemplo 3: Construcción de imágenes con una una aplicación Python"
 nav_order: 6
 parent: Creación de imágenes
 ---
 
-# Construcción de imágenes configurable con variables de entorno
+# Ejemplo 3: Construcción de imágenes con una una aplicación Python
