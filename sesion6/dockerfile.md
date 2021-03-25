@@ -23,7 +23,7 @@ Un fichero `Dockerfile` es un conjunto de instrucciones que serán ejecutadas de
 Hay varias instrucción que podemos usar en la construcción de un `Dockerfile`, pero la estructura fundamental del fichero es:
 
 * Indicamos imagen base: FROM
-* Metadatos: MANTEINER, LABEL
+* Metadatos: LABEL
 * Instrucciones de construcción: RUN, COPY, ADD, WORKDIR
 * Configuración: Variable de entornos, usuarios, puertos: USER, EXPOSE, ENV
 * Instrucciones de arranque: CMD, ENTRYPOINT
