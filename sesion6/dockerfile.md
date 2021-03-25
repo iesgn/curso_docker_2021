@@ -94,8 +94,8 @@ El contenido de `Dockerfile` es:
 FROM debian:buster-slim
 MAINTAINER José Domingo Muñoz "josedom24@gmail.com"
 RUN apt update  && apt install -y  apache2 
-COPY index.html /var/www/html/index.html
-ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+COPY index.html /var/www/html/
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 ```
 
 Para crear la imagen uso el comando `docker build`, indicando el nombre de la nueva imagen (opción `-t`) y indicando el directorio contexto.
@@ -113,8 +113,6 @@ REPOSITORY                TAG                 IMAGE ID            CREATED       
 josedom24/myweb           v1                  3bd28de7ae88        43 seconds ago      195MB
 ...
 ```
-
-Y ya podríamos crear un nuevo contenedor o distribuir la imagen usando alguno de los métodos anteriormente estudiados.
 
 Si usamos el parámetro `--no-cache` en `docker build` haríamos la construcción de una imagen sin usar las capas cacheadas por haber realizado anteriormente imágenes con capas similares.
 
