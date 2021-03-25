@@ -6,132 +6,86 @@ parent: Creación de imágenes
 ---
 # Ejemplo 1: Construcción de imágenes con una página estática
 
+En este ejemplo vamos a crear una imágen con una página estática. Vamos a crear tres versiones de la imagen, y puedes encontrar los ficheros en este [directorio](https://github.com/iesgn/curso_docker_2021/tree/main/ejemplos/sesion6/ejemplo1) del repositorio.
 
+## Versión 1: Desde una imagen base
 
+Tenemos un directorio, al que llamamos contento, donde tenemos el fichero `Dockerfile` y un directorio, llamado `public_html` con nuestra página web:
 
+```bash
+$ ls
+Dockerfile  public_html
+```
 
-docker run -d -p 80:80 --name ejemplo1 josedom24/ejemplo1:v1
-
-
-
-
-
-
-
-
-
-
-Los siguientes ejemplos lo puedes encontrar en el siguiente [repositorio](https://github.com/josedom24/ejemplos_dockerfile).
-
-## Ejemplo 1: Creación de una imagen desde una imagen base
-
-En este caso es necesario instalar los paquetes necesarios, copiar los ficheros de la aplicación en el directorio correspondiente e indicar el comando que se va a ejecutar al crear el contenedor.
-
-En este ejemplo vamos a crear una imágen con una página estática, el `Dockerfile` sería:
+En este caso vamos a usar una imagen base de un sistema operativo sin ningún servicio. El fichero `Dockerfile` será el siguiente:
 
 ```Dockerfile
 FROM debian
-MAINTAINER José Domingo Muñoz "josedom24@gmail.com"
-
-RUN apt-get update && apt-get install -y apache2 && apt-get lean && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
+ADD public_html /var/www/html/
 EXPOSE 80
-ADD ["index.html","/var/www/html/"]
-
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 ```
 
-## Ejemplo 2: Creación de una imagen desde una imagen con la aplicación
+Al usar una imagen base `debian` tenemos que instalar los paquetes necesarios para tener el servidor web, en este acaso apache2. A continuación añadiremos el contenido del directorio `public_html` al directorio `/var/www/html/` del contenedor y finalmente indicamos el comando que se deberá ejecutar al crear un contenedor a partir de esta imagen: iniciamos el servidor web en segundo plano.
 
-En este caso vamos a usar la imágen `httpd:2.4`, y lo único que tendremos que hacer será copiar los ficheros de la aplicación en el directorio correspondiente. no es necesario indicar el comando que ejecutará el contenedor ya que lo heredará de la imagen inicial. En este caso el `Dockerfile` quedaría:
+Para crear la imagen ejecutamos:
+
+```bash
+$ docker build -t josedom24/ejemplo1:v1 .
+```
+
+Comprobamos que la imagen se ha creado:
+
+```bash
+$ docker images
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+josedom24/ejemplo1     v1                  8c3275799063        1 minute ago      226MB
+```
+
+Y podemos crear un contenedor:
+
+```bash
+$ docker run -d -p 80:80 --name ejemplo1 josedom24/ejemplo1:v1
+```
+
+Y acceder con el navegador a nuestra página:
+
+![ejemplo1](img/ejemplo1.png)
+
+
+## Versión 2: Desde una imagen con apache2
+
+En este caso el fichero `Dockerfile` sería el siguiente:
 
 ```Dockerfile
 FROM httpd:2.4
-MAINTAINER José Domingo Muñoz "josedom24@gmail.com"
-
+ADD public_html /usr/local/apache2/htdocs/
 EXPOSE 80
-ADD public_html/index.html /usr/local/apache2/htdocs/
 ```
 
-## Ejemplo 3: Creación de una imagen configurable con variables de entorno (1ª opción)
+En este caso no necesitamos instalar nada, ya que la imagen tiene instalado el servidor web. En este caso y siguiendo la documentación de la imagen el **DocumentRoot* es `/usr/local/apache2/htdocs/`. No es necesario indicar el `CMD` ya que por defecto el contenedor creado a partir de esta imagen ejecutará el mismo proceso que la imagen base, es decir, la ejecución del servidor web.
 
-En este ejemplo queremos configurar algún parámetro del servicio de la imagen utilizando variables de entorno, en este caso vamos a crear una variable de entorno con el valor predeterminado. Cuando creamos el contenedor podremos cambiar este valor redifiniendo la variable de entorno. Además crearemos un script en bash, que será el que se ejecutará al crear el contenedor y será el responsable de editar los ficheros de configuración según el valor de las variables de entorno e iniciar el servicio.
-
-El fichero `script.sh` será:
+De forma similar, crearíamos una imagen y un contenedor:
 
 ```bash
-#!/bin/bash
-
-sed -i "s/#ServerName www.example.com/ServerName $SERVER_NAME/g" /etc/apache2/sites-available/000-default.conf 
-apache2ctl -D FOREGROUND
+$ docker build -t josedom24/ejemplo1:v2 .
+$ docker run -d -p 80:80 --name ejemplo1 josedom24/ejemplo1:v2
 ```
 
-Y el `Dockerfile`:
+## Versión 3: Desde una imagen con nginx
+
+En este caso el fichero `Dockerfile` sería:
 
 ```Dockerfile
-FROM debian
-MAINTAINER José Domingo Muñoz "josedom24@gmail.com"
-
-RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
-
+FROM nginx
+ADD public_html /usr/share/nginx/html
 EXPOSE 80
-ADD public_html/index.html /var/www/html/
-ADD script.sh /usr/local/bin/
-
-ENV SERVER_NAME www.example.com
-CMD ["script.sh"]
 ```
 
-## Ejemplo 4: Creación de una imagen configurable con variables de entorno (2ª opción)
-
-En esta segunda opción lo que vamos a hacer es copiar el fichero de configuración con las variables de entorno que vamos a usar en el directorio correspondiente. En este caso, si no tengo que hacer ninguna otra acción sobre el sistema no necesito el fichero `script.sh`.
-
-En este caso tendremos el fichero `000-default.conf` en el contexto con este contenido:
+De forma similar, crearíamos una imagen y un contenedor:
 
 ```bash
-<VirtualHost *:80>
-        ...
-        ServerName ${SERVER_NAME}
-        ...
+$ docker build -t josedom24/ejemplo1:v3 .
+$ docker run -d -p 80:80 --name ejemplo1 josedom24/ejemplo1:v3
 ```
-
-Y el `Dockerfile` sería:
-
-```Dockerfile
-FROM debian
-MAINTAINER José Domingo Muñoz "josedom24@gmail.com"
-
-RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-EXPOSE 80
-ADD public_html/index.html /var/www/html/
-ADD 000-default.conf /etc/apache2/sites-available/
-
-ENV SERVER_NAME www.example.com
-
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-```
-
-## Ejemplo 5: docker-compose que construyen imágenes
-
-En muchas ocasiones la imagen que se utiliza en docker-compose se genera antes con un `Dockerfile`, podemos configurar en nuestro `docker-compose.yml` que cuando levante el escenario genere la imagen usada a partir de un `Dockerfile`, utilizando el parámetro `buiild` en ves del parámetro `image`.
-
-Además puede ser buena idea estructurar en direcotrios distintos la construcción de la imagen (directorio `build`) y el docker-compose (directorio `deploy`).
-
-En este caso, el fichero `docker-compose.yml` del directorio `deploy` quedaría:
-
-```yaml
-version: '3.1'
-
-services:
-  apache:
-    container_name: servidor_apache
-    build: ../build
-    restart: always
-    environment:
-      SERVER_NAME: www.prueba.com
-    ports:
-      - 8080:80
-```
-
-Al ejecutar `docker-compose up -d` se creará la imagen a partir del `Dockerfile` del directorio `build`. si posteriormente queremos regenerar la imagen tendremos que ejecutar `docker-compose build` o `docker-compose up --build -d`.
