@@ -49,7 +49,8 @@
                     <h1>Curso: Introducción Docker</h1>
                     <h2>Aplicación escrita en PHP</h2>
                     <p>Fecha: <strong>
-                        <?php$today = date("d/m/Y");
+                        <?php
+                        $today = date("d/m/Y");
                         echo $today;
                         ?>
                     </strong></p>
