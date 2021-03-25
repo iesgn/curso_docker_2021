@@ -11,14 +11,7 @@ El método anterior tiene dos inconvenientes:
 * **No se puede reproducir la imagen**. Si la perdemos tenemos que recordar toda la secuencia de órdenes que habíamos ejecutado desde que arrancamos el contenedor hasta que teníamos una versión definitiva e hicimos `docker commit`.
 * **No podemos cambiar la imagen de base**. Si ha habido alguna actualización, problemas de seguridad, etc. con la imagen de base tenemos que descargar la nueva versión, volver a crear un nuevo contenedor basado en ella y ejecutar de nuevo toda la secuencia de órdenes.
 
-Por lo que el método preferido para la creación de imágenes es el uso de ficheros `Dockerfile` y el comando `docker build`. Los pasos fundamentales serán:
-
-1. Crear el fichero `Dockerfile`.
-2. Construir la imagen usando la definición guardada en el fichero `Dockerfile` y el comando `docker build`.
-3. Autentificarme en Docker Hub usando el comando `docker login`.
-4. Distribuir ese fichero subiendo la nueva imagen a DockerHub mediante `docker push`.
-
-Con este método vamos a tener las siguientes ventajas:
+Por lo que el método preferido para la creación de imágenes es el uso de ficheros `Dockerfile` y el comando `docker build`. Con este método vamos a tener las siguientes ventajas:
 
 * **Podremos reproducir la imagen fácilmente** ya que en el fichero `Dockerfile` tenemos todas y cada una de las órdenes necesarias para la construcción de la imagen. Si además ese `Dockerfile` está guardado en un sistema de control de versiones como git podremos, no sólo reproducir la imagen si no asociar los cambios en el `Dockerfile` a los cambios en las versiones de las imágenes creadas.
 * Si queremos cambiar la imagen de base esto es extremadamente sencillo con un `Dockerfile`, únicamente tendremos que modificar la primera línea de ese fichero tal y como explicaremos posteriormente.
@@ -50,19 +43,7 @@ Veamos las principales instrucciones que podemos usar:
 * **ENTRYPOINT**: Para establecer el ejecutable que se lanza siempre  cuando se crea el contenedor  con `docker run`, salvo que se especifique expresamente algo diferente con el flag `--entrypoint`. Su síntaxis es la siguiente: `ENTRYPOINT <command>` / `ENTRYPOINT ["executable","param1","param2"]`. Ejemplo: `ENTRYPOINT ["a/usr/sbin/apache2ctl","-D","FOREGROUND"]`
 * **CMD**: Para establecer el ejecutable por defecto (salvo que se sobreescriba desde la order docker run) o para especificar parámetros para un ENTRYPOINT. Si tengo varios sólo se ejecuta el último. Su sintaxis es CMD param1 param2 / CMD ["param1","param2"] / CMD["command","param1"]. Ejemplo: `CMD [“-c” “/etc/nginx.conf”]`  / `ENTRYPOINT [“nginx”]`. 
 
-Ejemplo:
-
-Si tenemos un fichero `Dockerfile`, que tiene las siguientes instrucciones:
-
-```bash
-ENTRYPOINT ["http", "-v"]
-CMD ["-p", "80"]
-```
-
-Podemos crear un contenedor a partir de la imagen generada:
-
-* `docker run centos:centos7`: Se creará el contenedor con el servidor web escuchando en el puerto 80.
-* `docker run centos:centros7 -p 8080`: Se creará el contenedor con el servidor web escuchando en el puerto 8080.
+Para una descripción completa sobre el fichero `Dockerfile`, puedes acceder a la [documentación oficial](https://docs.docker.com/engine/reference/builder/).
 
 ## Construyendo imágenes con docker build
 
