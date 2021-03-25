@@ -29,25 +29,18 @@ En este curso nos vamos a ocupar  únicamente de las dos primeras ya que la terc
 3. Si me llega un fichero .tar puedo añadir la imagen a mi repositorio local:
 
     ```bash
-    $ docker rmi josedom24/myapache2:latest 
-    Untagged: josedom24/myapache2:latest
-    Deleted: ha256:017a4489735f91f68366f505e4976c111129699785e1ef609aeb51615f98fc4
-    Deleted: ha256:761d2ff599422097fcf3dd1a13f50b9bf924e453efee8617e29a78602efcf21
-    
     $ docker load -i myapache2.tar          
-    6a30654d94bc: Loading layer [==================================================>]  132.4MB/132.4MB
+    6a30654d94bc: Loading layer [=============================================>]  132.4MB/132.4MB
     Loaded image: josedom24/myapache2:latest
     ```
 ## Distribución usando Docker Hub
-
-Los tres primeros pasos son iguales, por lo tanto tenemos nuestra imagen ya creada después de ejecutar `docker commit`, los siguientes pasos serían:
 
 1. Autentificarme en Docker Hub usando el comando `docker login`.
 
     ```bash
     $ docker login 
     Login with your Docker ID to push and pull images from Docker Hub...
-    Username: usuario
+    Username: josedom24
     Password: 
     ...
     Login Succeeded
@@ -60,7 +53,7 @@ Los tres primeros pasos son iguales, por lo tanto tenemos nuestra imagen ya crea
     The push refers to repository [docker.io/josedom24/myapache2]
     6a30654d94bc: Pushed 
     4762552ad7d8: Mounted from library/debian 
-    latest: digest: sha256:25b34b8342ac8b79610d3058aa07ec935dcf5d33db7544da9a216050e1d2077a size: 741
+    latest: digest: sha256:25b34b8342ac8b73058aa07ec935dcf5d33db7544da9a216050e1d2077a size: 741
     ```
 
 3. Ya cualquier persona puede bajar la imagen usando `docker pull`.
