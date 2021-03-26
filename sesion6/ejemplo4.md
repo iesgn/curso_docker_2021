@@ -15,7 +15,7 @@ Como ejemplo vamos a "dockerizar" una aplicación PHP para gestionar las citas d
 
 Algunas cosas que hay que tener en cuenta:
 
-1. La aplicación tiene la configuración de acceso en la base de datos en el fichero `/core/controller/Database.php`, en la siguiente función:
+* La aplicación tiene la configuración de acceso en la base de datos en el fichero `/core/controller/Database.php`, en la siguiente función:
 
 ```php
 function Database(){
@@ -24,7 +24,7 @@ function Database(){
 ```
   A continuación veremos que será necesario cambiar los valores fijos que están definidos por los valores guardados en las variables de entorno de configuración.
 
-2. En el fichero `schema.sql` encontramos las instrucciones sql necesarias para inicializar la base de datos.
+* En el fichero `schema.sql` encontramos las instrucciones sql necesarias para inicializar la base de datos.
 
 ## Configurar nuestra aplicación con variables de entorno
 
