@@ -48,11 +48,11 @@ $ docker run -d -p 80:80 --name ejemplo2 josedom24/ejemplo2:v1
 
 Y acceder con el navegador a nuestra página:
 
-![ejemplo1](img/ejemplo2.png)
+![ejemplo2](img/ejemplo2.png)
 
 La aplicación tiene un fichero `info.php`que me da información sobre PHP, en este caso observamos que estamos usando la versión 7.3:
 
-![ejemplo1](img/ejemplo2_phpinfo.png)
+![ejemplo2](img/ejemplo2_phpinfo.png)
 
 
 ## Versión 2: Desde una imagen con PHP instalado
@@ -76,4 +76,4 @@ $ docker run -d -p 80:80 --name ejemplo2 josedom24/ejemplo2:v2
 
 Podemos acceder al fichero `info.php` para comprobar la versión de php que estamos utilizando con esta imagen:
 
-![ejemplo1](img/ejemplo2_phpinfo2.png)
+![ejemplo2](img/ejemplo2_phpinfo2.png)

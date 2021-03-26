@@ -53,4 +53,4 @@ $ docker run -d -p 80:3000 --name ejemplo2 josedom24/ejemplo3:v1
 
 Y acceder con el navegador a nuestra página:
 
-![ejemplo1](img/ejemplo3.png)
+![ejemplo3](img/ejemplo3.png)
