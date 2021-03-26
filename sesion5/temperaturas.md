@@ -9,6 +9,9 @@ parent: Escenarios multicontenedor
 
 En este ejemplo vamos a desplegar con docker-compose la aplicación *Temperaturas*, que estudiamos en el módulo de redes: [Ejemplo 2: Despliegue de la aplicación Temperaturas](../sesion4/temperaturas.html).
 
+Puedes encontrar el fichero `docker-compose.yml` en en este [directorio](https://github.com/iesgn/curso_docker_2021/tree/main/ejemplos/sesion5/ejemplo2) del repositorio. 
+
+
 En este caso el fichero `docker-compose.yml` puede tener esta forma:
 
 ```yaml
