@@ -10,7 +10,7 @@ En este ejemplo vamos a crear una imágen con una página estática. Vamos a cre
 
 ## Versión 1: Desde una imagen base
 
-Tenemos un directorio, al que llamamos contento, donde tenemos el fichero `Dockerfile` y un directorio, llamado `public_html` con nuestra página web:
+Tenemos un directorio, que en Docker se denomina contexto, donde tenemos el fichero `Dockerfile` y un directorio, llamado `public_html` con nuestra página web:
 
 ```bash
 $ ls
