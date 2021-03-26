@@ -22,7 +22,7 @@ function Database(){
 		$this->user="root";$this->pass="";$this->host="localhost";$this->ddbb="bookmedik";
     }
 ```
-    Ahora veremos que será necesario cambiar los valores fijos que están definidos por los valores guardados en las variables de entorno de configuración.
+  Ahora veremos que será necesario cambiar los valores fijos que están definidos por los valores guardados en las variables de entorno de configuración.
 2. En el fichero `schema.sql` encontramos las instrucciones sql necesarias para inicializar la base de datos.
 
 ## Configurar nuestra aplicación con variables de entorno
