@@ -24,7 +24,3 @@ Las principales instrucciones para trabajar con imágenes son:
     * Las capas.
     * Y muchas más cosas....
 
-## Ejercicios
-
-1. Descarga las siguientes imágenes: `ubuntu:18.04`, `httpd`, `tomcat:9.0.39-jdk11`, `jenkins/jenkins:lts`, `php:7.4-apache`.
-2. Muestras las imágenes que tienes descargadas.
