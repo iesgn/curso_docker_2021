@@ -34,4 +34,4 @@ $ docker --version
 Docker version 19.03.8, build afacb8b7f0
 ```
 
-Si queréis instalar la versión de Docker ofrecida por la empresa: *docker-ce* podéis encontrar los distintos métodos y las distintas plataformas en la  la siguiente [página](https://docs.docker.com/get-docker/).
+Si queréis instalar la versión de Docker ofrecida por la empresa: *docker-ce*, podéis encontrar los distintos métodos y las distintas plataformas en la  la siguiente [página](https://docs.docker.com/get-docker/).
