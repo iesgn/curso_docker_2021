@@ -19,10 +19,10 @@ prueba
 
 ## Configuración de un contenedor con la imagen mariadb
 
-En ocasiones es obligatorio el inicializar alguna variable de entorno para que el contenedor pueda ser ejecutado. si miramos la [documentación](https://hub.docker.com/_/mariadb) en Docker Hub de la imagen mariadb, observamos que podemos definir algunas variables de entorno para la creación del contenedor (por ejemplo: `MYSQL_DATABASE`,`MYSQL_USER`, `MYSQL_PASSWORD`,...). Pero hay una que la tenemos que indicar de forma obligatoria, la contraseña del usuario `root` (`MYSQL_ROOT_PASSWORD`), por lo tanto:
+En ocasiones es obligatorio el inicializar alguna variable de entorno para que el contenedor pueda ser ejecutado. Si miramos la [documentación](https://hub.docker.com/_/mariadb) en Docker Hub de la imagen mariadb, observamos que podemos definir algunas variables de entorno para la creación y configuración del contenedor (por ejemplo: `MYSQL_DATABASE`,`MYSQL_USER`, `MYSQL_PASSWORD`,...). Pero hay una que la tenemos que indicar de forma obligatoria, la contraseña del usuario `root` (`MYSQL_ROOT_PASSWORD`), por lo tanto:
 
 ```bash
-$ docker run -D --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw mariadb
+$ docker run -d --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw mariadb
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED                STATUS              PORTS               NAMES
 9c3effd891e3        mariadb             "docker-entrypoint.s…"   8 seconds ago       Up 7   seconds        3306/tcp            some-mariadb
@@ -46,10 +46,21 @@ root@9c3effd891e3:/# mysql -u root -p"$MYSQL_ROOT_PASSWORD"
 
 MariaDB [(none)]> 
 ```
+Otra forma de hacerlo sería:
+
+```bash
+$ docker exec -it some-mariadb mysql -u root -p
+Enter password: 
+...
+MariaDB [(none)]> 
+```
 
 ### Accediendo a servidor de base de datos desde el exterior
 
-En el ejemplo anterior hemos ejecutado un comando `bash` para acceder al contenedor y desde dentro hemos utilizado el cliente de mariadb para acceder a la base de datos. En esta ocasión vamos a mapear los puertos para acceder desde el exterior a la base de datos:
+En el ejemplo anterior hemos accedido a la base de datos de dos formas: 1. Ejecutado un comando `bash` para acceder al contenedor y desde dentro hemos utilizado el cliente de mariadb para acceder a la base de datos.
+2. Ejecutando directamente en el contenedor el cliente de mariadb.
+
+En esta ocasión vamos a mapear los puertos para acceder desde el exterior a la base de datos:
 
 Lo primero que vamos a hacer es eliminar el contenedor anterior:
 
