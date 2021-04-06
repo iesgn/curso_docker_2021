@@ -8,7 +8,7 @@ parent: Introducción
 
 ## Instalación de la versión de la comunidad de docker: moby
 
-Si usamos debian o ubuntu vamos a instalar la versión de la comunidad:
+Si usamos debian o ubuntu podemos realizar la instalación de la versión de la comunidad:
 
 ```bash
 apt install docker.io
