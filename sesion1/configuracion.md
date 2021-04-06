@@ -57,7 +57,9 @@ MariaDB [(none)]>
 
 ### Accediendo a servidor de base de datos desde el exterior
 
-En el ejemplo anterior hemos accedido a la base de datos de dos formas: 1. Ejecutado un comando `bash` para acceder al contenedor y desde dentro hemos utilizado el cliente de mariadb para acceder a la base de datos.
+En el ejemplo anterior hemos accedido a la base de datos de dos formas: 
+
+1. Ejecutado un comando `bash` para acceder al contenedor y desde dentro hemos utilizado el cliente de mariadb para acceder a la base de datos.
 2. Ejecutando directamente en el contenedor el cliente de mariadb.
 
 En esta ocasión vamos a mapear los puertos para acceder desde el exterior a la base de datos:
