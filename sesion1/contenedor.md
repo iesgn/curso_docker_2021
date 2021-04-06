@@ -9,7 +9,7 @@ parent: Introducción
 Con el comando `run` vamos a crear un contenedor donde vamos a ejecutar un comando, en este caso vamos a crear el contenedor a partir de una imagen ubuntu. Como todavía no hemos descargado ninguna imagen del registro docker hub, es necesario que se descargue la  imagen. Si la tenemos ya en nuestro ordenador no será necesario la descarga. 
 
 ```bash
-$ docker run ubuntu /bin/echo 'Hello world' 
+$ docker run ubuntu echo 'Hello world' 
 Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
 8387d9ff0016: Pull complete 
@@ -23,7 +23,7 @@ Comprobamos que el contenedor ha ejecutado el comando que hemos indicado y se ha
 ```bash
 $ docker ps -a
 CONTAINER ID        IMAGE              COMMAND                  CREATED               STATUS                      PORTS               NAMES
-3bbf39d0ec26        ubuntu              "/bin/echo 'Hello wo…"   31 seconds ago      Exited     (0) 29 seconds ago                       wizardly_edison
+3bbf39d0ec26        ubuntu              "echo 'Hello wo…"   31 seconds ago      Exited     (0) 29 seconds ago                       wizardly_edison
 ```
 
 Con el comando `docker images` podemos visualizar las imágenes que ya tenemos descargadas en nuestro registro local:
