@@ -18,7 +18,7 @@ Status: Downloaded newer image for ubuntu:latest
 Hello world
 ```
 
-Comprobamos que el contenedor ha ejecutado el comando que hemos indicado y se parado:
+Comprobamos que el contenedor ha ejecutado el comando que hemos indicado y se ha parado:
 
 ```bash
 $ docker ps -a
