@@ -42,7 +42,7 @@ For more examples and ideas, visit:
 Pero, ¿qué es lo que está sucediendo al ejecutar esa orden?:
 
 * Al ser la primera vez que ejecuto un contenedor basado en esa imagen, la imagen `hello-word` se descarga desde el repositorio que se encuentra en el registro que vayamos a utilizar, en nuestro caso DockerHub.
-* Muestra el mensaje de bienvenida que es la consecuencia de crear y arrancar un contenedor basado en esa imagen.
+* Muestra el mensaje de bienvenida que es la consecuencia de ejecutar un comando al crear y arrancar un contenedor basado en esa imagen.
 
 Si listamos los contenedores que se están ejecutando (`docker ps`):
 
