@@ -12,7 +12,7 @@ Curso "Introducción a Docker" desarrollado para el CPR de Zafra (Abril 2021).
 
 ## Videoconferencia
 
-* [Videoconferencia para la celebración de las sesiones](https://meet.google.com/yze-tqtz-xsu)
+* [Videoconferencia para la celebración de las sesiones](https://vostok.gonzalonazareno.org/curso_docker_2021)
 
 ## Objetivos
 
