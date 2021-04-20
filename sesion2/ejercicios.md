@@ -48,7 +48,7 @@ Deberás sustituir XXXXXXXXXXX por tu nombre y tus apellidos.
 ### Servidor de base de datos
 
 * Arrancar un contenedor que se llame `bbdd` y que ejecute una instancia de la imagen mariadb para que sea accesible desde el puerto 3336.
-* Antes de arrancarlo visitar la página del contenedor en Docker Hub (https://hub.docker.com/_/mariadb) y establecer las variables de entorno necesarias para que:
+* Antes de arrancarlo visitar la página del contenedor en [Docker Hub](https://hub.docker.com/_/mariadb) y establecer las variables de entorno necesarias para que:
 
     * La contraseña de root sea `root`.
     * Crear una base de datos automáticamente al arrancar que se llame `prueba`.
