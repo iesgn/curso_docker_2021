@@ -15,7 +15,7 @@ En concretos, si estudiamos la [documentación](https://hub.docker.com/_/mediawi
 
 ## La etiqueta `latest`
 
-Si utilizamos el nombre de una imagen sin indicar la etiqueta, se toma por defecto la etiqueta `latest` que suele corresponder a la última versión de la aplicación. en el caso concreto de `mediawiki` observamos que la etiqueta `latest` corresponde a la última versión la `1.35.1`. Es mñas, podemos usar las siguientes etiquetas para indicar la misma versión: `1.35.1, 1.35, lts, stable, latest`.
+Si utilizamos el nombre de una imagen sin indicar la etiqueta, se toma por defecto la etiqueta `latest` que suele corresponder a la última versión de la aplicación. en el caso concreto de `mediawiki` observamos que la etiqueta `latest` corresponde a la última versión la `1.35.1`. Es más, podemos usar las siguientes etiquetas para indicar la misma versión: `1.35.1, 1.35, lts, stable, latest`.
 
 ## Las imágenes bases y la arquitectura también son indicadas con las etiquetas
 
