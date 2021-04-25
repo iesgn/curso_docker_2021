@@ -45,7 +45,7 @@ $ curl http://localhost:8080
 
 Algunas aclaraciones:
 
-1. Al no indicar el volumen, se creará un nuevo volumen.
+* Al no indicar el volumen, se creará un nuevo volumen.
 
 ```bash
 $ docker run -d --name my-apache-app --mount type=volume,dst=/usr/local/apache2/htdocs -p 8080:80 httpd:2.4
@@ -55,7 +55,7 @@ DRIVER              VOLUME NAME
 local               67a8c067f4de273db5f0cc3096ad87dc1658b56ca8388b108ea00b8641494c93
 ```
 
-2. Si usamos el flag `-v` e indicamos un nombre, se creará un volumen docker nuevo.
+* Si usamos el flag `-v` e indicamos un nombre, se creará un volumen docker nuevo.
 
 ```bash
 $ docker run -d --name my-apache-app -v wwwroot:/usr/local/apache2/htdocs -p 8080:80 httpd:2.4
