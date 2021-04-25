@@ -8,3 +8,5 @@ parent: Almacenamiento
 ## Compartir información entre contenedores
 
 ## Comprobar compatibilidad de código entre distintas versiones de un lenguaje de programación
+
+https://www.php.net/manual/es/migration70.incompatible.php
