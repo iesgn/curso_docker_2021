@@ -15,7 +15,7 @@ Veamos un ejemplo:
 $ docker run -d --name my-apache-app -p 8080:80 httpd:2.4
 ac50cc24ef71ae0263be7794278600d5cc4f085b88cebbf97b7b268212f2a82f
     
-$ docker exec my-apache-app bash -c 'echo "<h1>Hola</h1>" > htdocs/index.html'
+$ docker exec my-apache-app bash -c 'echo "<h1>Hola</h1>" > /usr/local/apache2/htdocs/index.html'
     
 $ curl http://localhost:8080
 <h1>Hola</h1>
