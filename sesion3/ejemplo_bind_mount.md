@@ -13,13 +13,25 @@ En este caso vamos a crear un directorio en el sistema de archivo del host, dond
 $ mkdir web
 $ cd web
 /web$ echo "<h1>Hola</h1>" > index.html
+```
 
+Y podemos montar ese directorio en un contenedor, en este caso usamos la opción `-v`:
+
+```bash
 $ docker run -d --name my-apache-app -v /home/usuario/web:/usr/local/apache2/htdocs -p 8080:80 httpd:2.4
 8de025f6ff4d4b8a5a57d10a9cbb283b103209f358c43148a4716a33a404e208
+```
 
+Y comprobamos que realmente estamos sirviendo el fichero que tenemos en el directorio que hemos creado.
+
+```bash
 $ curl http://localhost:8080
 <h1>Hola</h1>
+```
 
+Eliminamos el contenedor y volvemos a crear otro con el directorio montado, ahora usando la opción `--mount`:
+
+```bash
 $ docker rm -f my-apache-app 
 my-apache-app
 
