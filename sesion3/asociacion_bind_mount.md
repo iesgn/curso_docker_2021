@@ -50,5 +50,5 @@ $ curl http://localhost:8080
 <h1>Adios</h1>
 ```
 
-Por último, indicar que si nuestra carpeta origen no existe y hacemos un bind mount esa carpeta se creará pero lo que tendremos en el contenedor es una carpeta vacía. 
+Por último, indicar que si nuestra carpeta origen no existe y hacemos un bind mount con `-v`, esa carpeta se creará pero lo que tendremos en el contenedor es una carpeta vacía. sin embargo, si hacemos un bind mount con la opción `--mount` nos dará un error.
 
