@@ -57,7 +57,6 @@ Imaginemos que tenemos un directorio `codigo` con nuestra aplicación `index.php
 
 ```php
 <?php
-
 // Funciona bien en php5 ya que list hace la asignación desde el último al primero
 $info = array('cafeína','marrón', 'café');
 
