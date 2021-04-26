@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Ejemplo usando bind mount"
+title: "Asociando almacenamiento a los contenedores: bind mount"
 nav_order: 5
 parent: Almacenamiento
 ---
 
-## Ejemplo usando bind mount
+## Ejemplo: montando directorios usando bind mount
 
 En este caso vamos a crear un directorio en el sistema de archivo del host, donde vamos a crear un fichero `index.html`:
 
@@ -49,3 +49,6 @@ $ echo "<h1>Adios</h1>" > web/index.html
 $ curl http://localhost:8080
 <h1>Adios</h1>
 ```
+
+Por último, indicar que si nuestra carpeta origen no existe y hacemos un bind mount esa carpeta se creará pero lo que tendremos en el contenedor es una carpeta vacía. 
+

@@ -13,7 +13,7 @@ parent: Almacenamiento
     * Para copias de seguridad ya sea para que sean usadas posteriormente por otros contenedores o para mover esos volúmenes a otros hosts.
     * Cuando quiero almacenar los datos de mi contenedor no localmente si no en un proveedor cloud.
 
-* **Bind mounts**: Si elegimos conseguir la persistencia de los datos de los contenedores usando bind mount lo que estamos haciendo es "mapear" (montar) una parte de mi sistema de ficheros, de la que yo normalmente tengo el control, con una parte del sistema de ficheros del contenedor. De esta manera conseguimos:
+* **Bind mounts**: Si elegimos conseguir la persistencia de los datos de los contenedores usando bind mount lo que estamos haciendo es "mapear" (montar) una parte de mi sistema de ficheros, de la que yo normalmente tengo el control, con una parte del sistema de ficheros del contenedor. Por lo tanto podemos montar tanto **directorios** como **ficheros**. De esta manera conseguimos:
     * Compartir ficheros entre el host y los containers.
     * Que otras aplicaciones que no sean docker tengan acceso a esos ficheros, ya sean código, ficheros etc...
 
