@@ -29,3 +29,26 @@ Vamos a trabajar con bind mount:
 
 ## Ejercicios para entregar
 
+Entrega uno de estos dos ejercicios (si estás muy aburrido puedes entregar los dos):
+
+### Creación y uso de volúmenes
+
+1. Crear los siguientes volúmenes con la orden `docker volume`: *volumen_datos* y *volumen_web*.
+2. Una vez creados estos contenedores:
+    * Arrancar un contenedor llamado `c1` sobre la imagen `php:7.4-apache` que monte el volumen_web en la ruta `/var/www/html` y que sea accesible en el puerto 8080.
+    * Arrancar un contenedor llamado `c2` sobre la imagen `mariadb` que monte el volumen_datos en la ruta `/var/lib/mysql` y cuya contraseña de `root` sea `admin`.
+
+3. Intenta borrar el volumen *volumen_datos*, para ello tendrás  que parar y borrar el contenedor `c2` y tras ello borrar el volumen.
+4. Copia o crea un fichero `index.html` al contenedor `c1`, accede al contenedor y comprueba que se está visualizando.
+5. Borra el contenedor `c1` y crea un contenedor `c3` con las mismas características que `c1` pero sirviendo en el puerto 8081.
+
+Deberás entregar los siguientes pantallazos comprimidos en un zip o en un documento pdf:
+
+* Pantallazo donde se puedan ver los dos volúmenes creados.
+* Pantallazo con la orden correspondiente para arrancar el contenedor c1 usando el *volumen_web*.
+* Pantallazo con la orden correspondiente para arrancar el contenedor c2 usando el *volumen_datos*.
+* Pantallazo donde se vea el proceso para poder borrar el *volumen_datos*.
+* Pantallazo donde se vea el borrado de `c1` y la creación de `c3`.
+* Pantallazo donde se vea el acceso al contenedor `c3`.
+
+### 
