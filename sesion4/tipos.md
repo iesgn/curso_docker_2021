@@ -27,7 +27,7 @@ ec77cfd20583        bridge              bridge              local
 
     ![docker](img/bridge1.png)
 
-* Si conecto un contenedor a la red **host**, el contenedor ofrece el servicio que tiene configurado en el puerto de la red del anfitrión. No tiene ip propia, sino es cómo si tuviera la ip del anfitrión. Por lo tanto, los puerto son accesibles directamente desde el host. Por ejemplo:
+* Si conecto un contenedor a la red **host**, el contenedor ofrece el servicio que tiene configurado en el puerto de la red del anfitrión. No tiene ip propia, sino es cómo si tuviera la ip del anfitrión. Por lo tanto, los puertos son accesibles directamente desde el host. Por ejemplo:
 
     ```bash
     $ docker run -d --name mi_servidor --network host josedom24/aplicacionweb:v1
