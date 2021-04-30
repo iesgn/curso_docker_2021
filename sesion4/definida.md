@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Trabajando con la redes bridge definidas por el usuario"
+title: "Enlazando contenedores conectados a una red definida por el usuario"
 nav_order: 6
 parent: Redes
 ---
 
-# Trabajando con la redes bridge definidas por el usuario
+# Enlazando contenedores conectados a una red definida por el usuario
 
 Imaginemos que he creados dos redes definidas por el usuario:
 

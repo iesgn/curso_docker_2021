@@ -12,8 +12,8 @@ Veamos un ejemplo, primero creamos un contenedor de mariadb:
 
 ```bash
 $ docker run -d --name servidor_mariadb \
-                -e MYSQL_DATABASE=bd_wp \
-                -e MYSQL_USER=user_wp \
+                -e MYSQL_DATABASE=mi_basededatos \
+                -e MYSQL_USER=usuario \
                 -e MYSQL_PASSWORD=asdasd \
                 -e MYSQL_ROOT_PASSWORD=asdasd \
                 mariadb
@@ -39,7 +39,7 @@ docker exec servidor_web cat /etc/hosts
 
  * Se comparten las variables de entorno
 
-Las variables de entorno del primer contenedor son accesibles desde el segundo contenedor. Por cada asociación de contenedores, docker crea una serie de variables de entorno, en este caso, en el contenedor servidor, se crearán las siguientes variables, donde se utiliza el nombre del alias indicada en el parámetro --link:
+Las variables de entorno del primer contenedor son accesibles desde el segundo contenedor. Por cada asociación de contenedores, docker crea una serie de variables de entorno, en este caso, en el contenedor servidor, se crearán las siguientes variables, donde se utiliza el nombre del alias indicada en el parámetro `--link`:
 
 ```bash
 $ docker exec servidor_web env
