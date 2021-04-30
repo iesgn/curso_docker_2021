@@ -25,11 +25,11 @@ A continuación vamos a crear un nuevo contenedor, enlazado con el contenedor an
 $ docker run -d --name servidor_web --link servidor_mariadb:mariadb nginx
 ```
 
-Para realizar la asociación entre contenedores hemos utilizado el parámetro `--link`, donde se indica el nombre del contenedor enlazado y un alias por el que nos podemos referir a él. Normalmente las aplicaciones utilizan el nombre del alias que hemos indicado para conectarse al otro contenedor. En este tipo de enlace tenemos dos características:
+Para realizar la asociación entre contenedores (realmente estamos enlazando el contenedor `servidor_web` al `servidor_mariadb`) hemos utilizado el parámetro `--link`, donde se indica el nombre del contenedor enlazado y un alias por el que nos podemos referir a él. Normalmente las aplicaciones utilizan el nombre del alias que hemos indicado para conectarse al otro contenedor. En este tipo de enlace tenemos dos características:
 
-* Los contenedores son conocido por resolución estática
+* El contenedor al que hemos enlazado es conocido por resolución estática
 
-Otro mecanismo que se realiza para permitir la comunicación entre contenedores asociados es modificar el fichero /etc/hosts para que tengamos resolución estática entre ellos. Podemos comprobarlo:
+El contenedor modifica el fichero `/etc/hosts` para que tengamos resolución estática del contenedor enlazado. Podemos comprobarlo:
 
 ```bash
 docker exec servidor_web cat /etc/hosts
@@ -39,7 +39,7 @@ docker exec servidor_web cat /etc/hosts
 
  * Se comparten las variables de entorno
 
-Las variables de entorno del primer contenedor son accesibles desde el segundo contenedor. Por cada asociación de contenedores, docker crea una serie de variables de entorno, en este caso, en el contenedor servidor, se crearán las siguientes variables, donde se utiliza el nombre del alias indicada en el parámetro `--link`:
+Las variables de entorno del contenedor enlazado son accesibles desde el contenedor. Por cada asociación de contenedores, docker crea una serie de variables de entorno, en este caso, en el contenedor servidor, se crearán las siguientes variables, donde se utiliza el nombre del alias indicada en el parámetro `--link`:
 
 ```bash
 $ docker exec servidor_web env
