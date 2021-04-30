@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ejemplo 3: Despliegue de Wordpress + mariadb"
-nav_order: 9
+nav_order: 10
 parent: Redes
 ---
 # Ejemplo 3: Despliegue de Wordpress + mariadb
