@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Enlazando contenedores conectados a la red bridge por defecto"
+title: "Uso de la red bridge por defecto"
 nav_order: 5
 parent: Redes
 ---
-# Enlazando contenedores conectados a la red bridge por defecto
+# Uso de la red bridge por defecto
 
 Esta manera en enlazar contenedores no está recomendada y esta obsoleta. Además el uso de contenedores conectados a la red por defecto no está recomendado en entornos de producción. Para realizar este tipo de enlace vamos a usar el flag `--link`. **Si hemos comentado que no se suele usar. ¿Por qué lo vamos a explicar?**: La razón es que en la documentación de las imágenes en DockerHub se suele explicar el enlazado de contenedores usando esta opción.
 
