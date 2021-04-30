@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Asociación de redes a los contenedores"
-nav_order: 5
+title: "Trabajando con la redes bridge definidas por el usuario"
+nav_order: 6
 parent: Redes
 ---
 
-# Asociación de redes a los contenedores
+# Trabajando con la redes bridge definidas por el usuario
 
 Imaginemos que he creados dos redes definidas por el usuario:
 
