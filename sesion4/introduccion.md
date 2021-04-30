@@ -37,4 +37,4 @@ $ ip a
 ...
 ```
 
-Además podemos comprobar que se han creado distintas cadenas en el cortafuegos para gestionar la comunicación de los contenedores. Podemos ejecutar: `iptables -L -n` y `iptables -L -n - t nat` y comprobarlo.
+Además podemos comprobar que se han creado distintas cadenas en el cortafuegos para gestionar la comunicación de los contenedores. Podemos ejecutar como administrador: `iptables -L -n` y `iptables -L -n - t nat` y comprobarlo.
