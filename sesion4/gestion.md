@@ -18,7 +18,7 @@ Esta red "bridge" por defecto, que es la usada por defecto por los contenedores,
 * Puedo **conectar en caliente** a los contenedores redes "bridge" definidas por el usuario. Si uso la red por defecto tengo que parar previamente el contenedor.
 * Me permite gestionar de manera más segura el **aislamiento** de los contenedores, ya que si no indico una red al arrancar un contenedor éste se incluye en la red por defecto donde pueden convivir servicios que no tengan nada que ver.
 * Tengo más **control** sobre la configuración de las redes si las defino yo. Los contenedores de la red por defecto comparten todos la misma configuración de red (MTU, reglas ip tables etc...).
-* Los contenedores dentro de la  red "bridge" comparten todos ciertas variables de entorno lo que puede provocar ciertos conflictos.
+* Los contenedores dentro de la red "bridge" por defecto comparten todos ciertas variables de entorno lo que puede provocar ciertos conflictos.
 
 En definitiva: **Es importante que nuestro contenedores en producción se estén ejecutando sobre una red definida por el usuario.**
 
