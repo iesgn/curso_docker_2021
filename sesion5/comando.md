@@ -32,6 +32,23 @@ Los subcomandos más usados son:
 
 Para desplegar la aplicación Let's Chat que vimos en el punto anterior, ejecutamos la siguiente instrucción en el directorio donde tengamos el fichero `docker-compose.yml`:
 
+```yaml
+version: '3.1'
+services:
+  app:
+    container_name: guestbook
+    image: iesgn/guestbook
+    restart: always
+    ports:
+      - 80:5000
+  db:
+    container_name: redis
+    image: redis
+    restart: always
+```
+
+Para crear el escenario, ejecutamos:
+
 ```bash
 $ docker-compose up -d
 Creating network "letschat_default" with the default driver
