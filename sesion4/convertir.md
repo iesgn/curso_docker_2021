@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Convirtiendo un despliegue donde se usa la red bridge por defecto por una definida por el usuario"
+title: "Pasando del uso de la red bridge por defecto por una definida por el usuario"
 nav_order: 7
 parent: Redes
 ---
 
-# Convirtiendo un despliegue donde se usa la red bridge por defecto por una definida por el usuario
+# Pasando del uso de la red bridge por defecto por una definida por el usuario
 
 Hemos comentado que en muchos de las descripciones de las imágenes que encontramos en Docker Hub se sigue utilizando el parámetro `--link` para enlazar los contenedores que se conectan en la red bridge por defecto.
 
