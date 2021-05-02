@@ -113,6 +113,18 @@ PING contenedor2 (192.168.100.3) 56(84) bytes of data.
 ...
 ```
 
+Evidentemente desde el `contenedor2` también tenemos conectividad a contenedor1, pero evidentemente no al contenedor `my-apache-app`:
+
+```bash
+$ docker attach contenedor2
+root@f9c7ac830a18:/# ping contenedor1
+PING contenedor1 (192.168.100.2) 56(84) bytes of data.
+64 bytes from contenedor1.red2 (192.168.100.2): icmp_seq=1 ttl=64 time=0.072 ms
+...
+root@f9c7ac830a18:/# ping my-apache-app
+ping: my-apache-app: Name or service not known
+```
+
 Tanto al crear un contenedor con el flag `--network`, como con la instrucción `docker network connect`, podemos usar algunos otros flags:
 
 * `--dns`: para establecer unos servidores DNS predeterminados.
