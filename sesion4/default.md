@@ -32,10 +32,19 @@ Para realizar la asociación entre contenedores (realmente estamos enlazando el 
 El contenedor modifica el fichero `/etc/hosts` para que tengamos resolución estática del contenedor enlazado. Podemos comprobarlo:
 
 ```bash
-docker exec servidor_web cat /etc/hosts
+$ docker exec servidor_web cat /etc/hosts
 ...
 172.17.0.2	mariadb c76089892798 servidor_mariadb
 ```
+Podemos comprobar que el servidor DNS del contenedor, es el mismo que tiene nuestro host, por lo tanto la resolución no se hace desde un servidor DNS:
+
+```bash
+$ docker exec servidor_web cat /etc/resolv.conf
+...
+nameserver 192.168.121.1
+```
+
+El servidor DNS `192.168.121.1` es el que tiene configurado mi ordenador donde tengo instalado docker.
 
  * Se comparten las variables de entorno
 

@@ -53,6 +53,14 @@ my-apache-app.		600	IN	A	172.18.0.2
 ...
 ```
 
+Podemos comprobar la configuración DNS del contenedor:
+
+```bash
+root@98ab5a0c2f0c:/# cat /etc/resolv.conf 
+nameserver 127.0.0.11
+...
+```
+
 Evidentemente desde los dos contenedores se pueden resolver los dos nombres:
 
 ```bash
