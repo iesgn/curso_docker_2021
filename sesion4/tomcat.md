@@ -66,7 +66,7 @@ Como vemos para realizar el proxy inverso usamos la directiva `proxy_pass`indica
 $ docker run -d --name proxy \
                 -p 80:80 \
                 --network red_tomcat \
-                -v /home/vagrant/docker-tomcat-tutorial/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro \
+                -v /home/vagrant/tomcat/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro \
                 nginx
 ```
 
