@@ -19,7 +19,7 @@ $ docker network create red_tomcat
 
 A continuación vamos a crear un contenedor a partir de la imagen [`tomcat`](https://hub.docker.com/_/tomcat). En la documentación podemos ver que el directorio `/usr/local/tomcat/webapps/` es donde tenemos que poner el fichero de despliegue `war` (vamos a usar **bind mount** para montar el fichero war en el directorio). No vamos a mapear puerto porque no vamos a acceder a este contenedor desde el exterior.
 
-Tenemos un directorio donde tenemos el fichero war:
+Tenemos un directorio donde tenemos el fichero war (puedes encontrar estos ficheros en el [repositorio github](https://github.com/iesgn/curso_docker_2021/tree/main/ejemplos/sesion4/ejemplo4)):
 
 ```bash
 $ cd tomcat
