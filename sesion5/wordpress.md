@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Ejemplo 3: Despliegue de la aplicación WordPress + Mariadb"
+title: "Ejemplo 3: Despliegue de WordPress + Mariadb"
 nav_order: 7
 parent: Escenarios multicontenedor
 ---
 
-# Ejemplo 3: Despliegue de la aplicación WordPress + Mariadb
+# Ejemplo 3: Despliegue de WordPress + Mariadb
 
 En este ejemplo vamos a desplegar con docker-compose la aplicación WordPress + MAriaDB, que estudiamos en el módulo de redes: [Ejemplo 3: Despliegue de Wordpress + mariadb ](../sesion4/wordpress.html).
 
