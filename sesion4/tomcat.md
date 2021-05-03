@@ -72,4 +72,4 @@ $ docker run -d --name proxy \
 
 Y al acceder la ip de nuestro host:
 
-![tomact](iimg/tomcat.png)
+![tomcat](img/tomcat.png)
