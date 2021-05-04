@@ -37,7 +37,7 @@ Deberás entregar los siguientes pantallazos comprimidos en un zip o en un docum
 * Pantallazo donde desde cualquiera de los dos contenedores se pueda ver que no podemos hacer ping al otro ni por ip ni por nombre.
 * Pantallazo  donde se pueda comprobar que si conectamos el contenedor `u1` a la red2 (con `docker network connect`), desde el contenedor u1, tenemos acceso al contenedor u2 mediante ping, tanto por nombre como por ip.
 
-### Depliegue de Nextcloud + mariadb/postgreSQL
+### Despliegue de Nextcloud + mariadb/postgreSQL
 
 Vamos a desplegar la aplicación nextcloud con una base de datos (puedes elegir mariadb o PostgreSQL). Te puede servir el ejercicio que hemos realizado para desplegar [Wordpress](wordpress.html). Para ello sigue los siguientes pasos:
 
