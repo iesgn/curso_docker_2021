@@ -203,4 +203,4 @@ nameserver 127.0.0.11
 ...
 ```
 
-Por defecto este servidor hace forward con el servidor DNS que tenga configurado el anfitrión (es decir usa el DNS del anfitrión para resolver los nombre que no conoce). Con la opción `--dns 8.8.8.8`, estamos cambiando el DNS al que hacemos forwarding, por lo tanto ese cambio no se visualizar en el fichero `/etc/resolv.conf`.
+  Por defecto este servidor hace forward con el servidor DNS que tenga configurado el anfitrión (es decir usa el DNS del anfitrión para resolver los nombre que no conoce). Con la opción `--dns 8.8.8.8`, estamos cambiando el DNS al que hacemos forwarding, por lo tanto ese cambio no se visualizar en el fichero `/etc/resolv.conf`.
