@@ -193,6 +193,7 @@ root@servidor1:/# cat /etc/hosts
 root@servidor1:/# ping testing.example.com
 PING testing.example.com (192.168.100.20) 56(84) bytes of data.
 ...
+```
 
 * `--dns 8.8.8.8`: Hemos configurado como DNS el servidor `8.8.8.8`. Veamos esto con detenimiento, como hemos visto anteriormente al conectar el contenedor a una red bridge definida por el usuario se crea un servidor DNS que nos permite la resolución por el nombre del contenedor (parámetro `--name`, no se resuelve el nombre que hayamos indicado con el parámetro `--hostname`), veamos el servidor DNS:
 
