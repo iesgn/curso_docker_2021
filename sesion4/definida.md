@@ -156,9 +156,9 @@ Y creamos un contenedor conectado a esta red con algunos parámetros extras:
 ```bash
 $ docker run -it --name contenedor --network red3 \
                                    --ip 192.168.100.10 \
-                                   --add-host=testing.example.com:192.168.100.20 
-                                   --dns 8.8.8.8 
-                                   --hostname servidor1
+                                   --add-host=testing.example.com:192.168.100.20 \
+                                   --dns 8.8.8.8 \
+                                   --hostname servidor1 \
                                    debian
 ```
 
