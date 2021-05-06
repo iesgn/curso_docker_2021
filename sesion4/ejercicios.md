@@ -26,9 +26,9 @@ Entrega uno de estos dos ejercicios (si estás muy aburrido puedes entregar los 
     * Es resto de los datos será proporcionados automáticamente por Docker.
 
 2. Poner en ejecución un contenedor de la imagen `ubuntu:20.04` que tenga como hostname `host1`, como IP `172.28.0.10` y que esté conectado a la red1. Lo llamaremos `u1`.
-3- Entrar en ese contenedor e instalar la aplicación ping (`apt update && apt install inetutils-ping`).
-3. Poner en ejecución un contenedor de la imagen `ubuntu:20.04` que tenga como hostname `host2` y que esté conectado a la red2. En este caso será docker el que le de una IP correspondiente a esa red. Lo llamaremos `u2`.
-4. Entrar en ese contenedor e instalar la aplicación ping (`apt update && apt install inetutils-ping`).
+3. Entrar en ese contenedor e instalar la aplicación ping (`apt update && apt install inetutils-ping`).
+4. Poner en ejecución un contenedor de la imagen `ubuntu:20.04` que tenga como hostname `host2` y que esté conectado a la red2. En este caso será docker el que le de una IP correspondiente a esa red. Lo llamaremos `u2`.
+5. Entrar en ese contenedor e instalar la aplicación ping (`apt update && apt install inetutils-ping`).
 
 Deberás entregar los siguientes pantallazos comprimidos en un zip o en un documento pdf:
 
