@@ -83,7 +83,7 @@ Removing volume docker-compose_mariadb_data
 
 ## Utilización de bind mount con docker-compose
 
-De form parecido podemos indicar que un contenedor va a utilizar bind mount como almacenamiento. En este caso sería:
+De forma similar podemos indicar que un contenedor va a utilizar bind mount como almacenamiento. En este caso sería:
 
 ```yaml
 version: '3.1'
