@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ejemplos reales de despliegues usando docker-compose"
-nav_order: 19
+nav_order: 11
 parent: Escenarios multicontenedor
 ---
 

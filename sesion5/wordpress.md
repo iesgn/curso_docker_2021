@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ejemplo 3: Despliegue de WordPress + Mariadb"
-nav_order: 7
+nav_order: 9
 parent: Escenarios multicontenedor
 ---
 
