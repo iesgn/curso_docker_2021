@@ -29,7 +29,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - .wordpress:/var/www/html/wp-content
+      - ./wordpress:/var/www/html/wp-content
   db:
     container_name: servidor_mysql
     image: mariadb
