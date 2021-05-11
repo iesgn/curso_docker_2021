@@ -48,8 +48,6 @@ volumes:
     mariadb_data:
 ```
 
-
-
 Para crear el escenario:
 
 ```bash
@@ -85,6 +83,19 @@ Going to remove servidor_wp, servidor_mysql
 Are you sure? [yN] y
 Removing servidor_wp    ... done
 Removing servidor_mysql ... done
+```
+
+Para eliminar el escenario (contenedores, red y volúmenes):
+
+```bash
+$ docker-compose down -v
+Stopping servidor_mysql ... done
+Stopping servidor_wp    ... done
+Removing servidor_mysql ... done
+Removing servidor_wp    ... done
+Removing network volumen_default
+Removing volume volumen_wordpress_data
+Removing volume volumen_mariadb_data
 ```
 
 ## Utilizando bind-mount
