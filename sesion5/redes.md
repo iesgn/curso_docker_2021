@@ -74,7 +74,9 @@ Accedemos al servidor web e instalamos los paquetes necesarios para hacer las co
 
 ```bash
 $ docker-compose exec app bash
-root@servidor_web::/usr/local/apache2# apt-get update && apt-get install -y inetutils-ping iproute2 dnsutils
+root@servidor_web::/usr/local/apache2# apt-get update && apt-get install -y inetutils-ping \
+   iproute2 \
+   dnsutils
 ```
 
 Comprobamos que el hostname se ha configurado de manera adecuada:
