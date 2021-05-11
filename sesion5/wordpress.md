@@ -29,7 +29,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - /opt/wordpress:/var/www/html/wp-content
+      - .:/var/www/html/wp-content
   db:
     container_name: servidor_mysql
     image: mariadb
@@ -40,7 +40,7 @@ services:
       MYSQL_PASSWORD: asdasd
       MYSQL_ROOT_PASSWORD: asdasd
     volumes:
-      - /opt/mysql_wp:/var/lib/mysql
+      - .:/var/lib/mysql
 ```
 
 
