@@ -6,7 +6,7 @@ parent: Creación de imágenes
 ---
 # Creación de imágenes con fichero Dockerfile
 
-El método anterior tiene dos inconvenientes:
+El método anterior tiene algunos inconvenientes:
 
 * **No se puede reproducir la imagen**. Si la perdemos tenemos que recordar toda la secuencia de órdenes que habíamos ejecutado desde que arrancamos el contenedor hasta que teníamos una versión definitiva e hicimos `docker commit`.
 * **No podemos configurar el proceso que se ejecutará en el contenedor creado desde la imagen**. Los contenedores creados a partir de la nueva imagen ejecutaran por defecto el proceso que estaba configurado en la imagen base.
