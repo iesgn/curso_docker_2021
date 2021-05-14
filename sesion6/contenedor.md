@@ -8,7 +8,7 @@ parent: Creación de imágenes
 
 La primera forma para personalizar las imágenes es partiendo de un contenedor en ejecución. 
 
-1. Arranca un contenedor a a partir de una imagen base
+1. Arranca un contenedor a partir de una imagen base
 
     ```bash
     $ docker  run -it --name contenedor debian bash
@@ -18,6 +18,8 @@ La primera forma para personalizar las imágenes es partiendo de un contenedor e
 
     ```bash
     root@2df2bf1488c5:/# apt update && apt install apache2 -y
+    root@75f87f84a091:/# echo "<h1>Curso Docker</h1>" > /var/www/html/index.html
+    root@75f87f84a091:/# exit
     ```
 
 3. Crear una nueva imagen partiendo de ese contenedor usando `docker commit`. Con esta instrucción se creará una nueva imagen con las capas de la imagen base más la capa propia del contenedor. Al creala no voy a poner etiqueta, por lo que será `latest`.
@@ -32,4 +34,11 @@ La primera forma para personalizar las imágenes es partiendo de un contenedor e
     ...
     ```
 
+4. Podríamos crear un nuevo contenedor a partir de esta nueva imagen, pero al crear una imagen con este método **no podemos configurar el proceso que se va a ejecutar por defecto al crear el contenedor** (el proceso por defecto que se ejecuta sería el de la imagen base). Por lo tanto en la creación del nuevo contenedor tendríamos que indicar el proceso que queremos ejecutar. En este caso para ejecutar el servidor web apache2 tendremos que ejecutar el comando `apache2ctl -D FOREGROUND`:
 
+```bash
+$ docker run -d -p 8080:80 \
+             --name servidor_web \
+             josedom24/myapache2 \
+             bash -c "apache2ctl -D FOREGROUND"
+```
