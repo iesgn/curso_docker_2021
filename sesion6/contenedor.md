@@ -6,15 +6,15 @@ parent: Creación de imágenes
 ---
 # Creación de una nueva imagen a partir de un contenedor
 
-La primera forma para personalizar las imágenes es partiendo de un contenedor en ejecución. 
+La primera forma para personalizar las imágenes es partiendo de un contenedor que hayamos modificado. 
 
-1. Arranca un contenedor a partir de una imagen base
+1. Arranca un contenedor a partir de una imagen base.
 
     ```bash
     $ docker  run -it --name contenedor debian bash
     ```
 
-2. Realizar modificaciones en el contenedor (instalaciones, modificación de archivos,...)
+2. Realizar modificaciones en el contenedor (instalaciones, modificación de archivos,...).
 
     ```bash
     root@2df2bf1488c5:/# apt update && apt install apache2 -y
