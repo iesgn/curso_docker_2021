@@ -84,7 +84,7 @@ CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 Para crear la imagen uso el comando `docker build`, indicando el nombre de la nueva imagen (opción `-t`) y indicando el directorio contexto.
 
 ```bash
-$ docker build -t josedom24/myweb:v1 .
+$ docker build -t josedom24/myapache:v2 .
 ...
 ```
 > Nota: Pongo como directorio el `.` poruqe estoy ejecutando esta instrucción dentro del directorio donde está el `Dockerfile`.
@@ -95,7 +95,7 @@ Una vez terminado, podríamos ver que hemos generado una nueva imagen:
 ```bash
 $ docker images
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-josedom24/myweb           v1                  3bd28de7ae88        43 seconds ago      195MB
+josedom24/myapache           v2                  3bd28de7ae88        43 seconds ago      195MB
 ...
 ```
 

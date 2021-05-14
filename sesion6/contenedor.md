@@ -22,15 +22,15 @@ La primera forma para personalizar las imágenes es partiendo de un contenedor q
     root@75f87f84a091:/# exit
     ```
 
-3. Crear una nueva imagen partiendo de ese contenedor usando `docker commit`. Con esta instrucción se creará una nueva imagen con las capas de la imagen base más la capa propia del contenedor. Al creala no voy a poner etiqueta, por lo que será `latest`.
+3. Crear una nueva imagen partiendo de ese contenedor usando `docker commit`. Con esta instrucción se creará una nueva imagen con las capas de la imagen base más la capa propia del contenedor. Si no indico etiqueta en el nombre, se pondrá la etiqueta `latest`.
 
     ```bash
-    $ docker commit contenedor josedom24/myapache2
+    $ docker commit contenedor josedom24/myapache2:v1
     sha256:017a4489735f91f68366f505e4976c111129699785e1ef609aefb51615f98fc4
 
     $ docker images
     REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    josedom24/myapache2       latest              017a4489735f        44 seconds ago      243MB
+    josedom24/myapache2       v1              017a4489735f        44 seconds ago      243MB
     ...
     ```
 
@@ -39,6 +39,6 @@ La primera forma para personalizar las imágenes es partiendo de un contenedor q
 ```bash
 $ docker run -d -p 8080:80 \
              --name servidor_web \
-             josedom24/myapache2 \
+             josedom24/myapache2:v1 \
              bash -c "apache2ctl -D FOREGROUND"
 ```

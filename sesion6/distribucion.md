@@ -21,7 +21,7 @@ En este curso nos vamos a ocupar  únicamente de las dos primeras ya que la terc
 1. Guardar esa imagen en un archivo .tar usando el comando `docker save`:
 
     ```bash    
-    $ docker save josedom24/myapache2 > myapache2.tar
+    $ docker save josedom24/myapache2:v1 > myapache2.tar
     ```
 
 2. Distribuir el fichero `.tar`.
@@ -31,8 +31,9 @@ En este curso nos vamos a ocupar  únicamente de las dos primeras ya que la terc
     ```bash
     $ docker load -i myapache2.tar          
     6a30654d94bc: Loading layer [=============================================>]  132.4MB/132.4MB
-    Loaded image: josedom24/myapache2:latest
+    Loaded image: josedom24/myapache2:v1
     ```
+
 ## Distribución usando Docker Hub
 
 1. Autentificarme en Docker Hub usando el comando `docker login`.
@@ -46,11 +47,11 @@ En este curso nos vamos a ocupar  únicamente de las dos primeras ya que la terc
     Login Succeeded
     ```
 
-2. Distribuir ese fichero subiendo la nueva imagen a DockerHub mediante `docker push`.
+2. Distribuir ese fichero subiendo la nueva imagen a DockerHub mediante `docker push`. Nota: El nombre de la imagen tiene que tener como primera parte el nombre del usuario de DockerHub que estamos usando.
 
     ```bash
-    $ docker push josedom24/myapache2
-    The push refers to repository [docker.io/josedom24/myapache2]
+    $ docker push josedom24/myapache2:v2
+    The push refers to repository [docker.io/josedom24/myapache2:v2]
     6a30654d94bc: Pushed 
     4762552ad7d8: Mounted from library/debian 
     latest: digest: sha256:25b34b8342ac8b73058aa07ec935dcf5d33db7544da9a216050e1d2077a size: 741
