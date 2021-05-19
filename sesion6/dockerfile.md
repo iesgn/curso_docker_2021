@@ -101,6 +101,12 @@ josedom24/myapache           v2                  3bd28de7ae88        43 seconds 
 
 Si usamos el parámetro `--no-cache` en `docker build` haríamos la construcción de una imagen sin usar las capas cacheadas por haber realizado anteriormente imágenes con capas similares.
 
+En este caso al crear el contenedor a partir de esta imagen no hay que indicar el proceso que se va a ejecutar, porque ya se ha indicando en el fichero `Dockerfile`:
+
+```bash
+$ docker run -d -p 8080:80 --name servidor_web josedom24/myapache2:v2 
+```            
+
 ## Buenas prácticas al crear Dockerfile
 
 * **Los contenedores deber ser "efímeros"**: Cuando decimos "efímeros" queremos decir que la creación, parada, despliegue de los contenedores creados a partir de la imagen que vamos a generar con nuestro `Dockerfile` debe tener una mínima configuración.
