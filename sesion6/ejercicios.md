@@ -28,6 +28,7 @@ Deberás entregar los siguientes pantallazos comprimidos en un zip o en un docum
 3. Pantallazo donde se vea la imagen subida a tu cuenta de Docker Hub.
 4. Pantalalzo donde se vea la bajada de la imagen y la creación de un nuevo contenedor.
 
+### Creación de una imagen a partir de un Dockerfile
 
 1. Crea una página web estática (por ejemplo busca una plantilla HTML5). O simplemente crea un `index.html`.
 2. Crea un fichero `Dockerfile` que permita crear una imagen con un servidor web sirviendo la página. Puedes usar una imagen base debian o ubuntu, o una imagen que tenga ya un servicio web, como hemos visto en el apartado [Ejemplo 1: Construcción de imágenes con una página estática](ejemplo1.html).
