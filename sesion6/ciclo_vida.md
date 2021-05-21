@@ -148,7 +148,7 @@ Y probamos la aplicación:
 Subimos la nueva versión de la aplicación. En el entorno de producción: bajamos la nueva versión, eliminamos el contenedor de la versión antigua y creamos un nuevo contenedor con la nueva imagen:
 
 ```bash
-$ docker push josedom24/aplicacionweb:v1
+$ docker push josedom24/aplicacionweb:v2
 ...
 ```
 
