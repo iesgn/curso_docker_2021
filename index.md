@@ -10,11 +10,9 @@ nav_order: 1
 Curso "Introducción a Docker" desarrollado para el CPR de Zafra (Abril 2021).
 {: .fs-6 .fw-300 }
 
-<!--
-## Videoconferencia
+## Actualización de este curso
 
-* [Videoconferencia para la celebración de las sesiones](https://vostok.gonzalonazareno.org/curso_docker_2021)
--->
+**Este curso se desarrolló en Abril de 2021 para el CPR de Zafra. Sin embargo, se está actualizando para que esté al día lo más posible.**
 
 ## Objetivos
 
@@ -32,20 +30,10 @@ Curso "Introducción a Docker" desarrollado para el CPR de Zafra (Abril 2021).
 
 ## Contenidos
 
-* [Sesión 1: Introducción a los contenedores y a Docker (**15 de abril**)](sesion1)
-* [Sesión 2: Trabajando con imágenes docker (**22 de abril**)](sesion2)
-* [Sesión 3: Almacenamiento en docker (**29 de abril**)](sesion3)
-* [Sesión 4: Redes en docker (**6 de mayo**)](sesion4)
-* [Sesión 5: Creando escenarios multicontenedor con docker-compose (**13 de mayo**)](sesion5)
-* [Sesión 6: Creación de imágenes en docker (**20 de mayo**)](sesion6)
+* [Sesión 1: Introducción a los contenedores y a Docker](sesion1)
+* [Sesión 2: Trabajando con imágenes docker](sesion2)
+* [Sesión 3: Almacenamiento en docker](sesion3)
+* [Sesión 4: Redes en docker](sesion4)
+* [Sesión 5: Creando escenarios multicontenedor con docker-compose](sesion5)
+* [Sesión 6: Creación de imágenes en docker](sesion6)
 
-## Requisitos
-
-Sería muy conveniente que los destinatarios del presente curso cumplieran los siguientes requisitos:
-
-* Conocimientos básicos de redes.
-* Conocimientos básicos de Linux.
-* Conocimientos básicos sobre arquitectura y despliegue de aplicaciones en distintos lenguajes de programación.
-* Conocimientos básicos de git.
-
-El curso se va a desarrollar usando una máquina física o virtual con el sistema operativo Linux, distribuciones Debian/Ubuntu.
