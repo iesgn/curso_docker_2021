@@ -27,11 +27,11 @@ $ docker --version
 Docker version 20.10.5+dfsg1, build 55c4c88
 ```
 
-En es caso de Ubuntu, la versión será:
+En es caso de Ubuntu 20.04, la versión será:
 
 ```bash
 $ docker --version
-Docker version 19.03.8, build afacb8b7f0
+Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
 ```
 
 Si queréis instalar la versión de Docker ofrecida por la empresa: *docker-ce*, podéis encontrar los distintos métodos y las distintas plataformas en la  la siguiente [página](https://docs.docker.com/get-docker/).
