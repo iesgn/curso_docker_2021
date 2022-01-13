@@ -12,7 +12,7 @@ Curso "Introducción a Docker" desarrollado para el CPR de Zafra (Abril 2021).
 
 ## Actualización de este curso
 
-**Este curso se desarrolló en Abril de 2021 para el CPR de Zafra. Sin embargo, se está actualizando para que esté al día lo más posible.**
+**Este curso se desarrolló en Abril de 2021 para el CPR de Zafra. Sin embargo, se realizan modificaciones para intentar que el curso este actualizado.**
 
 Si quieres obtener el contenido original del curso puedes acceder a la rama `original` del [repositorio en GitHub](https://github.com/iesgn/curso_docker_2021/tree/original).
 
