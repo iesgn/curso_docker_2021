@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "Ejemplo 4: Construcción de imágenes configurable con variables de entorno"
+#title: "Ejemplo 4: Construcción de imágenes configurable con variables de entorno"
+title:
 nav_order: 7
 parent: Creación de imágenes
 nav_exclude: true
