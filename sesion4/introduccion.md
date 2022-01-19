@@ -18,8 +18,8 @@ $ docker run -it --name contenedor1 --rm debian bash
 
 En otra pestaña, podemos ejecutar esta instrucción para obtener la ip que se le ha asignado:
 
-```bash
-$ docker inspect -f '"{{range.NetworkSettings.Networks}}""{{.IPAddress}}""{{end}}"' contenedor1
+```
+$ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' contenedor1
 172.17.0.2
 ```
 
