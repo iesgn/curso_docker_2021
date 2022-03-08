@@ -7,21 +7,23 @@ parent: Redes
 
 # Introducción a las redes en docker
 
-Aunque hasta ahora no lo hemos tenido en cuenta, cada vez que creamos un contenedor, esté se conecta a una red virtual y docker hace una configuración del sistema (usando interfaces puente e iptables) para que la máquina tenga una ip interna, tenga acceso al exterior, podamos mapear (DNAT) puertos,...)
+Aunque hasta ahora no lo hemos tenido en cuenta, cada vez que creamos un contenedor, esté se conecta a una red virtual y docker hace una configuración del sistema (usando bridges e iptables) para que la máquina tenga una ip interna, tenga acceso al exterior, podamos mapear (DNAT) puertos,...
+
+Vamos a crear un contenedor interactivos con la imagen `debian`:
 
 ```bash
-$ docker run -it --rm debian bash -c "ip a"
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-28: eth0@if29: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
-    link/ether 02:42:ac:11:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid 0
-    inet 172.17.0.3/16 brd 172.17.255.255 scope global eth0
-       valid_lft forever preferred_lft forever
+$ docker run -it --name contenedor1 --rm debian bash
 ```
-
 **Nota: Hemos usado la opción `--rm` para al finalizar de ejecutar el proceso, el contenedor se elimina.**
+
+En otra pestaña, podemos ejecutar esta instrucción para obtener la ip que se le ha asignado:
+{% raw %}
+```
+$ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' contenedor1
+172.17.0.2
+```
+{% endraw %}
+Obtenemos información del contenedor filtrando el json de salida para obtener la IPv4 que se le ha asignado.
 
 Observamos que el contenedor tiene una ip en la red `172.17.0.0/16`. Además podemos comprobar que se ha creado un `bridge` en el host, al que se conectan los contenedores:
 
